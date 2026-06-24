@@ -1,0 +1,24 @@
+import type { MetadataRoute } from "next";
+
+const routes = [
+  "",
+  "/solutions",
+  "/services",
+  "/how-it-works",
+  "/platform",
+  "/resources",
+  "/about",
+  "/story-behind-comply",
+  "/contact",
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://comply.example.com";
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: route === "" ? 1 : 0.8,
+  }));
+}
