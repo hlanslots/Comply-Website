@@ -16,8 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Run these before merging or deploying:
 
 ```bash
-npm run lint
-npm run build
+npm run verify
 ```
 
 GitHub Actions runs the same checks on pull requests and pushes to `main`.
@@ -31,9 +30,7 @@ Production domain: `https://mycomply.ai`
 Current production deployment flow:
 
 ```bash
-vercel pull --yes --environment production
-vercel build --prod
-vercel deploy --prebuilt --prod
+npm run deploy:prod
 ```
 
 After the GitHub repository is connected to Vercel, pushes to `main` should create production deployments through Vercel Git integration, and pull requests should create preview deployments.
