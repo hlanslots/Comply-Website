@@ -2,6 +2,8 @@
 
 Production marketing website for COMPLY, built with Next.js and deployed on Vercel.
 
+GitHub repository: `https://github.com/hlanslots/Comply-Website`
+
 ## Local Development
 
 ```bash
