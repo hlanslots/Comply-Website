@@ -13,6 +13,12 @@ const riskManagementVideo = {
   src: "/videos/risk-management-video.mp4",
 };
 
+const complyUcfPlainEnglishVideo = {
+  enabled: true,
+  poster: "/videos/comply-ucf-plain-english-iso-style-video-poster.png",
+  src: "/videos/comply-ucf-plain-english-iso-style-video-with-intro.mp4",
+};
+
 export const metadata: Metadata = {
   title: "Resources",
   description:
@@ -28,12 +34,12 @@ export default function ResourcesPage() {
         description="Explore practical resources for security compliance, GRC, risk management, evidence management, and audit readiness."
         className="py-14 sm:py-18"
       />
-      <Section title="Featured resource" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
+      <Section title="Featured resources" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
         <Card className="overflow-hidden bg-card/80">
-          <CardContent className="grid gap-8 p-8 lg:grid-cols-[1fr_0.55fr]">
+          <CardContent className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_0.55fr] lg:gap-8 lg:p-8">
             <div>
               <FileText className="mb-6 h-10 w-10 text-primary" />
-              <h2 className="text-3xl font-semibold">The COMPLY Model White Paper</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">The COMPLY Model White Paper</h2>
               <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
                 Learn how evidence-driven governance, reusable controls, and traceable audit
                 conclusions reduce compliance effort while improving defensibility.
@@ -50,12 +56,40 @@ export default function ResourcesPage() {
             </div>
           </CardContent>
         </Card>
-        {riskManagementVideo.enabled ? (
+        {complyUcfPlainEnglishVideo.enabled ? (
           <Card className="mt-6 overflow-hidden bg-card/80">
-            <CardContent className="grid gap-8 p-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <CardContent className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-8 lg:p-8">
               <div>
                 <FileText className="mb-6 h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-semibold">Risk Management Video</h2>
+                <h2 className="text-2xl font-semibold sm:text-3xl">
+                  COMPLY UCF Overview
+                </h2>
+                <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+                  Watch a plain-English explanation of how COMPLY UCF turns framework specific
+                  control requirements into atomic obligations, canonical controls, evidence,
+                  and traceable compliance outputs.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-md border border-border bg-black shadow-2xl shadow-primary/10">
+                <video
+                  controls
+                  preload="metadata"
+                  poster={complyUcfPlainEnglishVideo.poster}
+                  className="aspect-video w-full"
+                >
+                  <source src={complyUcfPlainEnglishVideo.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </CardContent>
+          </Card>
+        ) : null}
+        {riskManagementVideo.enabled ? (
+          <Card className="mt-6 overflow-hidden bg-card/80">
+            <CardContent className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-8 lg:p-8">
+              <div>
+                <FileText className="mb-6 h-10 w-10 text-primary" />
+                <h2 className="text-2xl font-semibold sm:text-3xl">Risk Management Video</h2>
                 <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
                   Watch how COMPLY connects risk registers, control mapping, treatment planning,
                   evidence, and governance oversight into one practical operating model.

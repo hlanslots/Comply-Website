@@ -13,7 +13,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://comply.example.com";
+  const baseUrl = "https://mycomply.ai";
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

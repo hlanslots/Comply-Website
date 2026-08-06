@@ -38,18 +38,18 @@ export default function PlatformPage() {
             const Icon = section.icon;
             return (
               <Card key={section.title} className="h-full bg-card/80">
-                <CardContent className="flex h-full flex-col p-7">
+                <CardContent className="flex h-full flex-col p-6 lg:p-7">
                   <div className="mb-6 flex items-start justify-between gap-4">
                     <Icon className="h-8 w-8 text-primary" />
                     <Badge variant="secondary" className="rounded-md">
                       Platform model
                     </Badge>
                   </div>
-                  <h2 className="text-xl font-semibold md:min-h-14">{section.title}</h2>
-                  <p className="mt-3 leading-7 text-muted-foreground md:min-h-32">
+                  <h2 className="text-xl font-semibold lg:min-h-14">{section.title}</h2>
+                  <p className="mt-3 leading-7 text-muted-foreground lg:min-h-32">
                     {section.description}
                   </p>
-                  <div className="mt-6 md:min-h-52">
+                  <div className="mt-6 lg:min-h-52">
                     <h3 className="text-sm font-semibold">Includes</h3>
                     <ul className="mt-3 grid gap-2">
                       {section.includes.map((item) => (

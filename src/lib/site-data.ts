@@ -31,8 +31,8 @@ export const navItems = [
 ];
 
 export const whitePaperDownload = {
-  href: "/downloads/COMPLY%20-%20White%20Paper%20V1.7%20-%2006062026.pdf",
-  filename: "COMPLY - White Paper V1.7 - 06062026.pdf",
+  href: "/downloads/COMPLY_UCF_Conceptual_Methodology_White_Paper.pdf",
+  filename: "COMPLY_UCF_Conceptual_Methodology_White_Paper.pdf",
 };
 
 export const challenges = [

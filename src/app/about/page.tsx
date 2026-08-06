@@ -25,8 +25,8 @@ export default function AboutPage() {
       />
       <Section title="Our Mission" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
         <Card className="bg-card/80">
-          <CardContent className="p-8">
-            <p className="max-w-3xl text-2xl font-semibold leading-10">
+          <CardContent className="p-5 sm:p-6 lg:p-8">
+            <p className="max-w-3xl text-xl font-semibold leading-8 sm:text-2xl sm:leading-10">
               Help organizations achieve and demonstrate security compliance.
             </p>
             <p className="mt-5 max-w-4xl text-lg leading-7 text-muted-foreground">
@@ -64,8 +64,8 @@ export default function AboutPage() {
             },
           ].map((item) => (
             <Card key={item.title} className="h-full bg-card/80">
-              <CardContent className="p-7">
-                <h2 className="text-2xl font-semibold">{item.title}</h2>
+              <CardContent className="p-6 lg:p-7">
+                <h2 className="text-xl font-semibold sm:text-2xl">{item.title}</h2>
                 <p className="mt-3 leading-6 text-muted-foreground">{item.description}</p>
               </CardContent>
             </Card>
@@ -94,7 +94,7 @@ export default function AboutPage() {
         className="bg-muted/45"
       >
         <Card className="bg-card/80">
-          <CardContent className="grid gap-6 p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <CardContent className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center lg:p-8">
             <p className="max-w-3xl leading-7 text-muted-foreground">
               The C.O.M.P.L.Y.™ story explains the practical compliance problems that shaped the
               methodology: overlapping requirements, duplicated control work, fragmented evidence,

@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# COMPLY Website
 
-## Getting Started
+Production marketing website for COMPLY, built with Next.js and deployed on Vercel.
 
-First, run the development server:
+## Local Development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Gates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run these before merging or deploying:
 
-## Learn More
+```bash
+npm run lint
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+GitHub Actions runs the same checks on pull requests and pushes to `main`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vercel project: `comply-website`
 
-## Deploy on Vercel
+Production domain: `https://mycomply.ai`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Current production deployment flow:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel pull --yes --environment production
+vercel build --prod
+vercel deploy --prebuilt --prod
+```
+
+After the GitHub repository is connected to Vercel, pushes to `main` should create production deployments through Vercel Git integration, and pull requests should create preview deployments.
+
+## DNS
+
+The domain is registered at GoDaddy and attached to the Vercel project. Configure GoDaddy DNS so Vercel can serve the site:
+
+```txt
+Type  Name  Value
+A     @     76.76.21.21
+A     www   76.76.21.21
+```
+
+Alternatively, change the domain nameservers at GoDaddy to:
+
+```txt
+ns1.vercel-dns.com
+ns2.vercel-dns.com
+```
+
+Once DNS changes propagate, verify:
+
+```bash
+curl -I https://mycomply.ai
+curl https://mycomply.ai/robots.txt
+curl https://mycomply.ai/sitemap.xml
+```

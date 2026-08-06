@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://comply.example.com"),
+  metadataBase: new URL("https://mycomply.ai"),
   title: {
     default: "COMPLY | Security Compliance, GRC, Risk Management, and Audit Readiness",
     template: "%s | COMPLY",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "COMPLY | Achieve Compliance. Demonstrate Compliance. Leverage Your Edge.",
     description:
       "Evidence-driven compliance management, risk governance, audit readiness, and continuous compliance oversight.",
-    url: "https://comply.example.com",
+    url: "https://mycomply.ai",
     siteName: "COMPLY",
     type: "website",
   },

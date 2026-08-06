@@ -171,10 +171,10 @@ export function TraceabilityFlow() {
           <GitBranch className="h-5 w-5 text-primary" />
           <h3 className="text-lg font-semibold">Requirement to Audit-Ready Output</h3>
         </div>
-        <div className="grid auto-rows-fr gap-3 md:grid-cols-5">
+        <div className="grid auto-rows-fr gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {traceabilityNodes.map((node, index) => (
             <div key={node.title} className="relative h-full">
-              <div className="flex h-full min-h-72 flex-col rounded-md border border-border bg-background p-4">
+              <div className="flex h-full min-h-0 flex-col rounded-md border border-border bg-background p-4 lg:min-h-72">
                 <div className="flex items-start gap-3">
                   <Badge variant="secondary" className="mt-0.5 rounded-md font-mono">
                     0{index + 1}
@@ -188,7 +188,7 @@ export function TraceabilityFlow() {
                 </div>
               </div>
               {index < traceabilityNodes.length - 1 ? (
-                <ArrowRight className="absolute -right-5 top-1/2 z-10 hidden h-5 w-5 -translate-y-1/2 text-primary md:block" />
+                <ArrowRight className="absolute -right-5 top-1/2 z-10 hidden h-5 w-5 -translate-y-1/2 text-primary lg:block" />
               ) : null}
             </div>
           ))}
@@ -275,7 +275,7 @@ export function AuditReadinessJourney() {
   const stages = ["Scope", "Map", "Validate", "Package", "Support"];
 
   return (
-    <div className="grid gap-3 md:grid-cols-5">
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
       {stages.map((stage, index) => (
         <div key={stage} className="rounded-md border border-border bg-card p-4">
           <CircleDot className="mb-4 h-5 w-5 text-primary" />

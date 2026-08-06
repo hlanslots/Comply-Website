@@ -4,14 +4,13 @@ import Link from "next/link";
 import { Menu, ShieldCheck } from "lucide-react";
 
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
 import { navItems } from "@/lib/site-data";
 
 export function SiteHeader() {
@@ -39,9 +38,6 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
-          <Link href="/contact" className={cn(buttonVariants(), "rounded-md")}>
-            Schedule a Consultation
-          </Link>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -59,7 +55,7 @@ export function SiteHeader() {
             >
               <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[320px] p-6">
+            <SheetContent side="right" className="w-[320px] max-w-[calc(100vw-1rem)] p-6">
               <SheetTitle className="sr-only">Main navigation</SheetTitle>
               <div className="mb-8 flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
@@ -78,9 +74,6 @@ export function SiteHeader() {
                   </Link>
                 ))}
               </nav>
-              <Link href="/contact" className={cn(buttonVariants(), "mt-6 w-full rounded-md")}>
-                Schedule a Consultation
-              </Link>
             </SheetContent>
           </Sheet>
         </div>

@@ -59,11 +59,11 @@ export default function StoryBehindComplyPage() {
         className="pt-3 pb-8 sm:pt-4 sm:pb-10"
       >
         <Card className="bg-card/80">
-          <CardContent className="max-h-[34rem] space-y-6 overflow-y-auto p-8 pr-6 sm:max-h-[38rem]">
+          <CardContent className="max-h-[30rem] space-y-5 overflow-y-auto p-5 pr-4 sm:max-h-[34rem] sm:p-6 sm:pr-5 lg:max-h-[38rem] lg:space-y-6 lg:p-8 lg:pr-6">
             {storyParagraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="max-w-5xl text-2xl leading-9 text-muted-foreground"
+                className="max-w-5xl text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-8 lg:text-2xl lg:leading-9"
               >
                 {paragraph}
               </p>
@@ -82,7 +82,7 @@ export default function StoryBehindComplyPage() {
             const Icon = principle.icon;
             return (
               <Card key={principle.title} className="h-full bg-card/80">
-                <CardContent className="p-7">
+                <CardContent className="p-6 lg:p-7">
                   <Icon className="mb-5 h-7 w-7 text-primary" />
                   <h2 className="text-xl font-semibold">{principle.title}</h2>
                   <p className="mt-3 text-lg leading-8 text-muted-foreground">
@@ -101,7 +101,7 @@ export default function StoryBehindComplyPage() {
       >
         <Link
           href="/contact"
-          className={cn(buttonVariants({ size: "lg" }), "rounded-md px-4")}
+          className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
         >
           Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
         </Link>

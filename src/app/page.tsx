@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden border-b border-border/70">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,oklch(0.11_0.03_245),oklch(0.21_0.035_245)_45%,transparent_80%),radial-gradient(circle_at_82%_22%,oklch(0.66_0.16_178_/_0.26),transparent_33%)]" />
-        <div className="site-shell grid min-h-[calc(100svh-4rem)] items-center gap-10 py-16 lg:grid-cols-[1.28fr_0.72fr] lg:items-start lg:pt-40">
+        <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.28fr_0.72fr] lg:items-start lg:py-16 lg:pt-40">
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
               Security compliance solutions built for operational reality.
@@ -36,7 +36,7 @@ export default function Home() {
                 into verifiable operational reality through governance, evidence management,
                 traceability, and continuous compliance oversight.
               </span>
-              <span className="mt-16 block whitespace-nowrap text-[clamp(0.7rem,1.18vw,1rem)] font-semibold leading-6 text-white/90">
+              <span className="mt-10 block text-sm font-semibold leading-6 text-white/90 sm:mt-12 sm:text-base lg:mt-16 lg:whitespace-nowrap lg:text-[clamp(0.7rem,1.18vw,1rem)]">
                 <span className="text-primary">C</span>onsolidate requirements.{" "}
                 <span className="text-primary">O</span>ptimize controls.{" "}
                 <span className="text-primary">M</span>anage risk.{" "}
@@ -45,10 +45,10 @@ export default function Home() {
                 <span className="text-primary">Y</span>ield lasting results.
               </span>
             </p>
-            <div className="mt-24 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-12 flex flex-col gap-3 sm:mt-16 sm:flex-row lg:mt-24">
               <Link
                 href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "rounded-md px-4")}
+                className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
               >
                 Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
