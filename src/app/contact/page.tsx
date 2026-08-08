@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { CalendarCheck, Mail, Phone } from "lucide-react";
 
+import { ContactForm } from "@/components/marketing/contact-form";
 import { PageHero, Section } from "@/components/marketing/section";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -63,21 +61,7 @@ export default function ContactPage() {
           </div>
           <Card className="bg-card/80">
             <CardContent className="p-6">
-              <form className="grid gap-4" aria-label="Schedule a consultation form">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Input name="name" placeholder="Name" aria-label="Name" required />
-                  <Input name="company" placeholder="Company" aria-label="Company" required />
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Input name="title" placeholder="Title" aria-label="Title" />
-                  <Input name="email" type="email" placeholder="Email" aria-label="Email" required />
-                </div>
-                <Input name="phone" type="tel" placeholder="Phone" aria-label="Phone" />
-                <Textarea name="message" placeholder="Message" aria-label="Message" rows={7} />
-                <Button type="submit" size="lg" className="rounded-md sm:w-fit">
-                  Schedule a Consultation
-                </Button>
-              </form>
+              <ContactForm />
             </CardContent>
           </Card>
         </div>
