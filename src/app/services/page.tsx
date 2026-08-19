@@ -22,7 +22,7 @@ export default function ServicesPage() {
         description="From readiness and assessments to governance reviews and program optimization, COMPLY helps teams build defensible compliance outcomes."
         className="py-14 sm:py-18"
       />
-      <Section title="Service offerings" className="pt-3 sm:pt-4">
+      <Section title="Service offerings" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid gap-4 md:grid-cols-2">
           {services.map((service) => {
             const Icon = service.icon;

@@ -34,7 +34,7 @@ export default function ResourcesPage() {
         description="Explore practical resources for security compliance, GRC, risk management, evidence management, and audit readiness."
         className="py-14 sm:py-18"
       />
-      <Section title="Featured resources" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
+      <Section title="Featured resources" className="pt-2 pb-8 sm:pt-3 sm:pb-10 lg:pt-8">
         <Card className="overflow-hidden bg-card/80">
           <CardContent className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_0.55fr] lg:gap-8 lg:p-8">
             <div>

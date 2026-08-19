@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -63,13 +64,15 @@ export function PageHero({
           </p>
         </div>
         <div className="hidden justify-end lg:flex">
-          <Image
-            src="/logo-transparent.png"
-            alt="COMPLY logo"
-            width={1024}
-            height={1024}
-            className="h-56 w-56 object-contain drop-shadow-2xl"
-          />
+          <Link href="/" aria-label="C.O.M.P.L.Y. home">
+            <Image
+              src="/comply-logo.png"
+              alt="COMPLY logo"
+              width={1024}
+              height={1024}
+              className="h-56 w-56 object-contain drop-shadow-2xl"
+            />
+          </Link>
         </div>
       </div>
     </section>

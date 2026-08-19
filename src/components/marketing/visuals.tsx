@@ -222,7 +222,7 @@ export function FrameworkMatrix() {
 export function GovernanceModel() {
   const tiers = [
     {
-      title: "Framework and control library",
+      title: "COMPLY UCF Workbench",
       detail: "Frameworks, local controls, categories, mapping rationale, applicability, and guidance.",
     },
     {
@@ -230,7 +230,7 @@ export function GovernanceModel() {
       detail: "Criteria, compliance artifacts, client evidence, and document-to-control relationships.",
     },
     {
-      title: "Client engagement governance",
+      title: "COMPLY Security Stack Assessment Workbench",
       detail: "Clients, engagements, assessment scope, frameworks, assessment assets, and ownership.",
     },
     {

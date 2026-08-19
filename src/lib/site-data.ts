@@ -570,7 +570,7 @@ export const processSteps = [
 
 export const platformSections = [
   {
-    title: "Framework & Control Library",
+    title: "COMPLY UCF Workbench",
     description:
       "Maintain framework versions, framework controls, local control definitions, categories, applicability, and mapping rationale in one structured library.",
     model: "FRA_Frameworks, FrameworkControls, ControlMapping, CON_Controls",
@@ -585,42 +585,45 @@ export const platformSections = [
     icon: Layers3,
   },
   {
-    title: "Criteria & Evidence Model",
+    title: "COMPLY-DOCS",
     description:
-      "Connect audit criteria, internal compliance artifacts, client evidence, and documentation directly to controls and assessment needs.",
+      "Use the COMPLY-DOCS Workbench to organize documents and evidence artifacts, connect them to engagements and controls, and move them through governed review and publication.",
     model: "CRI_Criteria, COM_ComplyArtifacts, CLI_ClientArtifacts",
     includes: [
-      "Audit criteria associated with controls",
-      "Internal and client evidence registers",
-      "Evidence-to-control and evidence-to-criteria linkage",
+      "Organization and engagement repository setup",
+      "Document and evidence artifact classification",
+      "Framework and control mapping",
+      "Review, approval, and audit-ready publication",
     ],
     outcome:
-      "Evidence becomes reusable, validated, and traceable enough to support defensible audit conclusions.",
+      "Governed artifacts remain traceable from repository to control, review, and publication, producing audit-ready documentation with less duplication and rework.",
     icon: FileCheck2,
   },
   {
-    title: "Client, Engagement & Assessment Model",
+    title: "COMPLY Security Stack Assessment Workbench",
     description:
-      "Organize clients, engagements, assessments, applicable frameworks, assessment assets, and related risk assessment activity.",
+      "Run security stack assessments in one connected workbench for client profiles, engagements, assessment scope, frameworks, and assessment evidence.",
     model: "CLI_Clients, ENG_Engagements, ASS_Assessments, RiskAssessment",
     includes: [
-      "Client and engagement records",
-      "Assessment scope and framework alignment",
-      "Assets attached to assessments",
+      "Client and engagement management",
+      "Assessment scope and framework mapping",
+      "Security stack assets and control context",
+      "Assessment findings, ownership, and review tracking",
     ],
     outcome:
       "Every compliance effort has a defined scope, owner context, framework basis, and assessment record.",
     icon: NotebookTabs,
   },
   {
-    title: "Asset, Vulnerability, Threat & Risk",
+    title: "COMPLY Risk Workbench",
     description:
-      "Link assets to vulnerabilities, threats, risk evaluations, treatment decisions, owners, review states, and treatment controls.",
+      "Use the COMPLY Risk Workbench to inventory security assets, analyze vulnerabilities and threats, evaluate risk, and manage treatment decisions in one connected workspace.",
     model: "Assets, VUL_Vulnerabilities, Threats, Evaluations, RiskTreatments",
     includes: [
-      "Asset and vulnerability registers",
-      "Threat linkage and risk evaluation",
-      "Treatment plans mapped back to controls",
+      "Security asset inventory and context mapping",
+      "Vulnerability and threat analysis",
+      "Risk scoring and evaluation",
+      "Treatment planning with owner, control, and evidence linkage",
     ],
     outcome:
       "Risk treatment decisions connect directly to control operation, evidence needs, and governance review.",
@@ -798,7 +801,7 @@ export const footerColumns = [
   { title: "Solutions", links: ["Governance", "Audit Readiness", "Risk Management", "Evidence"] },
   { title: "Services", links: ["Assessments", "Readiness", "Internal Audit", "Optimization"] },
   { title: "Resources", links: ["White Papers", "Guides", "Governance", "Audit Readiness"] },
-  { title: "Company", links: ["About", "Approach", "Contact", "Consultation"] },
+  { title: "Company", links: ["About", "Approach", "Contact", "Conversation"] },
 ];
 
 export const keywordDescription =

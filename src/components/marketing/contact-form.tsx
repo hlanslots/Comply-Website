@@ -8,7 +8,11 @@ import { Textarea } from "@/components/ui/textarea";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
-export function ContactForm() {
+type ContactFormProps = {
+  source?: string;
+};
+
+export function ContactForm({ source = "comply" }: ContactFormProps) {
   const [state, setState] = useState<FormState>("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
@@ -49,13 +53,14 @@ export function ContactForm() {
   return (
     <form
       className="grid gap-4"
-      aria-label="Schedule a consultation form"
+      aria-label="Schedule a conversation form"
       onSubmit={onSubmit}
     >
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
+      <input type="hidden" name="source" value={source} />
       <div className="grid gap-4 sm:grid-cols-2">
         <Input
           name="name"
@@ -98,7 +103,7 @@ export function ContactForm() {
         >
           {state === "sending"
             ? "Sending..."
-            : "Schedule a Consultation"}
+            : "Schedule a Conversation"}
         </Button>
         {statusMessage ? (
           <p

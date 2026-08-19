@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 
 import { FadeIn, Stagger, StaggerItem } from "@/components/marketing/motion";
 import { heroHeadlineClass, Section } from "@/components/marketing/section";
@@ -50,21 +50,32 @@ export default function Home() {
                 href="/contact"
                 className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
               >
-                Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                Schedule a Conversation <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link
+                href="/subscribe"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-md border-white/25 bg-white/8 text-white hover:bg-white/15 hover:text-white",
+                )}
+              >
+                Subscribe to the Newsletter <Mail className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.12}>
             <div className="flex flex-col items-center justify-center lg:items-end lg:justify-end">
-              <Image
-                src="/logo-transparent.png"
-                alt="COMPLY logo"
-                width={1024}
-                height={1024}
-                priority
-                className="h-auto w-full max-w-xs object-contain drop-shadow-2xl sm:max-w-sm lg:max-w-md"
-              />
+              <Link href="/" aria-label="C.O.M.P.L.Y. home">
+                <Image
+                  src="/comply-logo.png"
+                  alt="COMPLY logo"
+                  width={1024}
+                  height={1024}
+                  priority
+                  className="h-auto w-full max-w-[9.8rem] object-contain drop-shadow-2xl sm:max-w-[11.76rem] lg:max-w-[13.72rem]"
+                />
+              </Link>
             </div>
           </FadeIn>
         </div>

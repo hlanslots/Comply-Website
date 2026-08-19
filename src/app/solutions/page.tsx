@@ -22,7 +22,7 @@ export default function SolutionsPage() {
         description="COMPLY brings governance, controls, risk, evidence, and audit readiness into a cohesive operating model."
         className="py-14 sm:py-18"
       />
-      <Section title="Dedicated solution areas" className="pt-3 sm:pt-4">
+      <Section title="Dedicated solution areas" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution) => {
             const Icon = solution.icon;

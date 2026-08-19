@@ -10,6 +10,7 @@ const routes = [
   "/about",
   "/story-behind-comply",
   "/contact",
+  "/subscribe",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

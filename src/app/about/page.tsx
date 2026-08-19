@@ -23,7 +23,7 @@ export default function AboutPage() {
         description="COMPLY exists to help organizations achieve and demonstrate security compliance with clarity, accountability, and defensible outcomes."
         className="py-14 sm:py-18"
       />
-      <Section title="Our Mission" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
+      <Section title="Our Mission" className="pt-2 pb-8 sm:pt-3 sm:pb-10 lg:pt-8">
         <Card className="bg-card/80">
           <CardContent className="p-5 sm:p-6 lg:p-8">
             <p className="max-w-3xl text-xl font-semibold leading-8 sm:text-2xl sm:leading-10">

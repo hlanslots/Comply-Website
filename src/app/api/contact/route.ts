@@ -12,6 +12,7 @@ type ContactPayload = {
   phone?: unknown;
   message?: unknown;
   website?: unknown;
+  source?: unknown;
 };
 
 function asText(value: unknown) {
@@ -31,15 +32,15 @@ function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function getSourceLabel(source: string) {
+  return source.toLowerCase() === "ansec" ? "ANSEC" : "COMPLY";
+}
+
 export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
-
-  if (!resendApiKey) {
-    return Response.json(
-      { error: "Email delivery is not configured." },
-      { status: 500 },
-    );
-  }
+  const mockSend =
+    process.env.NODE_ENV !== "production" &&
+    process.env.CONTACT_FORM_MOCK_SEND === "true";
 
   let payload: ContactPayload;
 
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
   const email = asText(payload.email);
   const phone = asText(payload.phone);
   const message = asText(payload.message);
+  const sourceLabel = getSourceLabel(asText(payload.source));
 
   if (!name || !company || !email || !message) {
     return Response.json(
@@ -75,6 +77,7 @@ export async function POST(request: Request) {
   }
 
   const fields = [
+    ["Origin", sourceLabel],
     ["Name", name],
     ["Company", company],
     ["Title", title || "Not provided"],
@@ -85,7 +88,7 @@ export async function POST(request: Request) {
 
   const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n\n");
   const html = `
-    <h1>New COMPLY consultation request</h1>
+    <h1>New ${sourceLabel} conversation request</h1>
     ${fields
       .map(
         ([label, value]) => `
@@ -98,12 +101,29 @@ export async function POST(request: Request) {
       .join("")}
   `;
 
+  if (mockSend) {
+    console.info("Mocked COMPLY contact email", {
+      to: recipientEmail,
+      replyTo: email,
+      subject: `[${sourceLabel}] conversation request from ${name}`,
+    });
+
+    return Response.json({ ok: true, mocked: true });
+  }
+
+  if (!resendApiKey) {
+    return Response.json(
+      { error: "Email delivery is not configured." },
+      { status: 500 },
+    );
+  }
+
   const resend = new Resend(resendApiKey);
   const { error } = await resend.emails.send({
     from: senderEmail,
     to: recipientEmail,
     replyTo: email,
-    subject: `COMPLY consultation request from ${name}`,
+    subject: `[${sourceLabel}] conversation request from ${name}`,
     text,
     html,
   });

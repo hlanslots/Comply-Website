@@ -20,6 +20,12 @@ export function SiteFooter() {
               Evidence-driven compliance, governance, risk management, and audit readiness for
               organizations that need defensible outcomes.
             </p>
+            <Link
+              href="/subscribe"
+              className="mt-5 inline-flex rounded-md border border-primary/30 px-3 py-2 text-sm font-semibold text-primary transition hover:bg-primary/10"
+            >
+              Subscribe to the newsletter
+            </Link>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (

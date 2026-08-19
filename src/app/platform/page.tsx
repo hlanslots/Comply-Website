@@ -32,7 +32,7 @@ export default function PlatformPage() {
         description="COMPLY connects requirements, controls, evidence, governance, and audit conclusions in one reusable model."
         className="py-14 sm:py-18"
       />
-      <Section title="Platform capabilities" className="pt-3 sm:pt-4">
+      <Section title="Platform capabilities" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {platformSections.map((section) => {
             const Icon = section.icon;

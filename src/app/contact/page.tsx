@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Schedule a consultation with COMPLY for security compliance, risk management, audit readiness, governance, and evidence management support.",
+    "Schedule a conversation with COMPLY for security compliance, risk management, audit readiness, governance, and evidence management support.",
 };
 
 export default function ContactPage() {
@@ -16,16 +16,16 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Schedule a consultation with COMPLY."
+        title="Schedule a conversation with COMPLY."
         description="Discuss your compliance obligations, audit readiness priorities, governance model, evidence strategy, and risk management needs."
         className="py-14 sm:py-18"
       />
-      <Section title="Consultation request" className="pt-3 sm:pt-4">
+      <Section title="Conversation request" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr]">
           <div className="grid gap-4">
             {[
               {
-                title: "Executive consultation",
+                title: "Executive conversation",
                 description:
                   "Discuss your compliance objectives, audit pressure, framework obligations, governance needs, and executive reporting priorities. COMPLY helps leadership clarify where compliance effort is being duplicated, where evidence is weak, and how to move toward defensible audit outcomes.",
                 icon: CalendarCheck,
@@ -33,7 +33,7 @@ export default function ContactPage() {
               {
                 title: "Email response",
                 description:
-                  "Send a focused question about ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, NIS2, evidence reuse, control mapping, audit readiness, or governance oversight. COMPLY will respond with practical next steps and the right consultation path for your situation.",
+                  "Send a focused question about ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, NIS2, evidence reuse, control mapping, audit readiness, or governance oversight. COMPLY will respond with practical next steps and the right conversation path for your situation.",
                 icon: Mail,
               },
               {
