@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden border-b border-border/70">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,oklch(0.11_0.03_245),oklch(0.21_0.035_245)_45%,transparent_80%),radial-gradient(circle_at_82%_22%,oklch(0.66_0.16_178_/_0.26),transparent_33%)]" />
-        <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.28fr_0.72fr] lg:items-start lg:py-16 lg:pt-40">
+        <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:grid-cols-[1fr_18rem] lg:items-center lg:py-16 lg:pt-40 lg:pb-8">
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
               Security compliance solutions built for operational reality.
@@ -73,7 +73,7 @@ export default function Home() {
                   width={1024}
                   height={1024}
                   priority
-                  className="h-auto w-full max-w-[9.8rem] object-contain drop-shadow-2xl sm:max-w-[11.76rem] lg:max-w-[13.72rem]"
+                  className="h-auto w-full max-w-[9.8rem] object-contain drop-shadow-2xl sm:max-w-[11.76rem] lg:h-56 lg:w-56 lg:max-w-none"
                 />
               </Link>
             </div>
