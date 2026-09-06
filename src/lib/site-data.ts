@@ -21,6 +21,7 @@ import {
 
 export const navItems = [
   { label: "Home", href: "/" },
+  { label: "Customer Challenges", href: "/customer-challenges" },
   { label: "Solutions", href: "/solutions" },
   { label: "Services", href: "/services" },
   { label: "How It Works", href: "/how-it-works" },
@@ -40,31 +41,37 @@ export const challenges = [
     title: "Controls are documented but not operational.",
     description:
       "Policies, procedures, and control statements may exist on paper, but they often do not reflect how work is actually performed. This creates a gap between documented intent and operational reality that weakens compliance defensibility.",
+    icon: ShieldCheck,
   },
   {
     title: "Evidence exists but does not demonstrate effectiveness.",
     description:
       "Organizations may collect screenshots, tickets, reports, and documents without proving that controls are designed correctly, implemented intentionally, and operating as expected over time.",
+    icon: FileCheck2,
   },
   {
     title: "Evidence cannot be reused across frameworks.",
     description:
       "When evidence is not mapped to common controls, criteria, and assurance dimensions, teams must answer the same audit questions repeatedly across ISO, SOC 2, NIST, PCI DSS, GDPR, DORA, and other obligations.",
+    icon: Layers3,
   },
   {
     title: "Audit preparation consumes excessive time and resources.",
     description:
       "Audit readiness becomes a recurring scramble when evidence requests, ownership, control mappings, and review status are not maintained continuously throughout the compliance cycle.",
+    icon: Gauge,
   },
   {
     title: "Compliance activities lack traceability and governance.",
     description:
       "Without clear links between requirements, controls, owners, evidence, reviews, risks, and audit conclusions, leadership cannot easily see what is working, what is missing, and what requires action.",
+    icon: GitBranch,
   },
   {
     title: "Artifacts are disconnected from control intent, design, implementation, and operation.",
     description:
       "Evidence artifacts lose audit value when they are not tied to the purpose of the control, the criteria being tested, and the expected proof of design, existence, and operating effectiveness.",
+    icon: Blocks,
   },
 ];
 

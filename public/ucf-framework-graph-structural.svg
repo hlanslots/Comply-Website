@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+  <title id="title">UCF framework map with bidirectional arrows</title>
+  <desc id="desc">The Unified Control Framework connects bidirectionally with eight surrounding compliance frameworks.</desc>
+
+  <defs>
+    <filter id="arrow-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" />
+    </filter>
+    <marker id="arrowhead" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" refX="16" refY="9" orient="auto" viewBox="0 0 18 18">
+      <path d="M 0 1 L 16 9 L 0 17 Z" fill="#f4ffff" />
+    </marker>
+    <pattern id="background-grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 L 0 42" fill="none" stroke="#0a2548" stroke-width="1" opacity=".62" />
+    </pattern>
+    <style>
+      .arrow-glow { fill: none; stroke: #7eeeff; stroke-width: 14; stroke-linecap: round; opacity: .58; filter: url(#arrow-glow); }
+      .arrow { fill: none; stroke: #f4ffff; stroke-width: 5; stroke-linecap: round; marker-end: url(#arrowhead); }
+    </style>
+  </defs>
+
+  <!-- Match the supplied artwork's dark grid in the transparent corners. -->
+  <rect width="1254" height="1254" fill="#010413" />
+  <rect width="1254" height="1254" fill="url(#background-grid)" />
+
+  <!-- The original clean artwork remains the immutable base layer. -->
+  <image href="ucf-framework-graph.png" x="0" y="0" width="1254" height="1254" preserveAspectRatio="none" />
+
+  <!--
+    All arrows use the same 100px radial length, 5px shaft, and 18px arrowhead.
+    Center = (627, 627). Inward tips are placed at radius 254, exactly on the
+    inner-circle border; outward arrows start at radius 244 so both shafts cross it.
+  -->
+  <g id="arrows" aria-label="Bidirectional framework connections">
+    <!-- ISO27001/2: outward up, inward down -->
+    <path class="arrow-glow" d="M 605.7 383.9 L 597.0 284.3" />
+    <path class="arrow" d="M 605.7 383.9 L 597.0 284.3" />
+    <path class="arrow-glow" d="M 657.9 274.3 L 649.1 374.0" />
+    <path class="arrow" d="M 657.9 274.3 L 649.1 374.0" />
+
+    <!-- SOC2: outward up-right, inward down-left -->
+    <path class="arrow-glow" d="M 783.8 440.1 L 848.1 363.5" />
+    <path class="arrow" d="M 783.8 440.1 L 848.1 363.5" />
+    <path class="arrow-glow" d="M 898.2 399.5 L 821.6 463.7" />
+    <path class="arrow" d="M 898.2 399.5 L 821.6 463.7" />
+
+    <!-- NIST SP800: outward right, inward left -->
+    <path class="arrow-glow" d="M 870.1 605.7 L 969.7 597.0" />
+    <path class="arrow" d="M 870.1 605.7 L 969.7 597.0" />
+    <path class="arrow-glow" d="M 979.7 657.9 L 880.0 649.1" />
+    <path class="arrow" d="M 979.7 657.9 L 880.0 649.1" />
+
+    <!-- NIST CSF: outward down-right, inward up-left -->
+    <path class="arrow-glow" d="M 813.9 783.8 L 890.5 848.1" />
+    <path class="arrow" d="M 813.9 783.8 L 890.5 848.1" />
+    <path class="arrow-glow" d="M 854.5 898.2 L 790.3 821.6" />
+    <path class="arrow" d="M 854.5 898.2 L 790.3 821.6" />
+
+    <!-- CIS: outward down, inward up -->
+    <path class="arrow-glow" d="M 648.3 870.1 L 657.0 969.7" />
+    <path class="arrow" d="M 648.3 870.1 L 657.0 969.7" />
+    <path class="arrow-glow" d="M 596.1 979.7 L 604.9 880.0" />
+    <path class="arrow" d="M 596.1 979.7 L 604.9 880.0" />
+
+    <!-- PCI DSS: outward down-left, inward up-right -->
+    <path class="arrow-glow" d="M 470.2 813.9 L 405.9 890.5" />
+    <path class="arrow" d="M 470.2 813.9 L 405.9 890.5" />
+    <path class="arrow-glow" d="M 355.8 854.5 L 432.4 790.3" />
+    <path class="arrow" d="M 355.8 854.5 L 432.4 790.3" />
+
+    <!-- DORA: outward left, inward right -->
+    <path class="arrow-glow" d="M 383.9 648.3 L 284.3 657.0" />
+    <path class="arrow" d="M 383.9 648.3 L 284.3 657.0" />
+    <path class="arrow-glow" d="M 274.3 596.1 L 374.0 604.9" />
+    <path class="arrow" d="M 274.3 596.1 L 374.0 604.9" />
+
+    <!-- GDPR: outward up-left, inward down-right -->
+    <path class="arrow-glow" d="M 440.1 470.2 L 363.5 405.9" />
+    <path class="arrow" d="M 440.1 470.2 L 363.5 405.9" />
+    <path class="arrow-glow" d="M 399.5 355.8 L 463.7 432.4" />
+    <path class="arrow" d="M 399.5 355.8 L 463.7 432.4" />
+  </g>
+</svg>

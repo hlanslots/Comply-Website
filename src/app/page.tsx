@@ -2,17 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 
-import { FadeIn, Stagger, StaggerItem } from "@/components/marketing/motion";
+import { FadeIn } from "@/components/marketing/motion";
 import { heroHeadlineClass, Section } from "@/components/marketing/section";
 import {
-  FrameworkMatrix,
+  FrameworkGraph,
   GovernanceModel,
   TraceabilityFlow,
 } from "@/components/marketing/visuals";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  challenges,
   outcomes,
   pillars,
   supportingSubheads,
@@ -45,23 +44,6 @@ export default function Home() {
                 <span className="text-primary">Y</span>ield lasting results.
               </span>
             </p>
-            <div className="mt-12 flex flex-col gap-3 sm:mt-16 sm:flex-row lg:mt-24">
-              <Link
-                href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
-              >
-                Schedule a Conversation <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link
-                href="/subscribe"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-md border-white/25 bg-white/8 text-white hover:bg-white/15 hover:text-white",
-                )}
-              >
-                Subscribe to the Newsletter <Mail className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
           </FadeIn>
 
           <FadeIn delay={0.12}>
@@ -81,31 +63,26 @@ export default function Home() {
         </div>
       </section>
 
-      <Section
-        eyebrow="Customer challenges"
-        title="Compliance programs fail when proof and operation drift apart."
-        description="COMPLY addresses the gaps that prevent organizations from turning documented intent into audit-defensible operational reality."
-      >
-        <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {challenges.map((challenge, index) => (
-            <StaggerItem key={challenge.title}>
-              <Card className="h-full bg-card/80">
-                <CardContent className="flex h-full gap-4 p-6">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 font-mono text-sm font-semibold text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold leading-7">{challenge.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      {challenge.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Section>
+      <div className="site-shell flex flex-col items-start gap-4 py-5 sm:flex-row sm:justify-start sm:py-6">
+        <Link
+          href="/contact"
+          className={cn(
+            buttonVariants({ size: "lg" }),
+            "w-full justify-center rounded-md sm:w-56",
+          )}
+        >
+          Schedule a Conversation <ArrowRight className="ml-2 h-4 w-4" />
+        </Link>
+        <Link
+          href="/subscribe"
+          className={cn(
+            buttonVariants({ variant: "outline", size: "lg" }),
+            "w-full justify-center rounded-md border-white/25 bg-white/8 text-white hover:bg-white/15 hover:text-white sm:w-56",
+          )}
+        >
+          Subscribe to our Newsletter <Mail className="ml-2 h-4 w-4" />
+        </Link>
+      </div>
 
       <Section
         eyebrow="COMPLY solution"
@@ -162,7 +139,9 @@ export default function Home() {
         title="One Compliance Program. Multiple Frameworks."
         description="A unified control structure creates reusable evidence across security, privacy, resilience, and governance obligations."
       >
-        <FrameworkMatrix />
+        <div className="max-w-3xl">
+          <FrameworkGraph />
+        </div>
       </Section>
 
       <Section

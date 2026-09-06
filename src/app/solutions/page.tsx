@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
 
-import { PageHero, Section } from "@/components/marketing/section";
+import { Section } from "@/components/marketing/section";
 import { TraceabilityFlow } from "@/components/marketing/visuals";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,13 +16,11 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Solutions"
-        title="Security compliance solutions built for operational reality."
-        description="COMPLY brings governance, controls, risk, evidence, and audit readiness into a cohesive operating model."
-        className="py-14 sm:py-18"
-      />
-      <Section title="Dedicated solution areas" className="pt-2 sm:pt-3 lg:pt-8">
+      <Section
+        eyebrow="Dedicated solutions"
+        title="Dedicated solution areas"
+        className="pt-14 sm:pt-16 lg:pt-24"
+      >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution) => {
             const Icon = solution.icon;

@@ -14,21 +14,25 @@ export function Section({
   description,
   children,
   className,
+  headingLevel = "h2",
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   children?: ReactNode;
   className?: string;
+  headingLevel?: "h1" | "h2";
 }) {
+  const Heading = headingLevel;
+
   return (
     <section className={cn("py-14 sm:py-16 lg:py-24", className)}>
       <div className="site-shell">
         <div className="mb-10 max-w-3xl">
           {eyebrow ? <Badge className="mb-4 rounded-md">{eyebrow}</Badge> : null}
-          <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
+          <Heading className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
             {title}
-          </h2>
+          </Heading>
           {description ? (
             <p className="mt-4 text-lg leading-7 text-muted-foreground">{description}</p>
           ) : null}
