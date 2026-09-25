@@ -4,6 +4,7 @@ import { CalendarCheck, Mail, Phone } from "lucide-react";
 import { ContactForm } from "@/components/marketing/contact-form";
 import { PageHero, Section } from "@/components/marketing/section";
 import { Card, CardContent } from "@/components/ui/card";
+import { brandPromise } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Start with a Compliance Clarity Conversation."
-        description="Tell us what changed, what is due, and where your team needs confidence. We will help you frame the right next step for your scope and maturity."
+        description={`${brandPromise} Tell us what changed, what is due, and where your team needs confidence. We will help you frame the right next step for your scope and maturity.`}
         className="py-14 sm:py-18"
       />
       <Section
@@ -69,6 +70,24 @@ export default function ContactPage() {
             </CardContent>
           </Card>
         </div>
+      </Section>
+      <Section
+        eyebrow="Scope and independence"
+        title="Clear support, clear boundaries."
+        className="bg-muted/45 pt-8 sm:pt-10"
+      >
+        <p className="max-w-4xl leading-7 text-muted-foreground">
+          COMPLY supports readiness, governance, evidence, risk management, and internal
+          assessment. COMPLY does not issue ISO certifications, replace an independent auditor or
+          certification body, act as a QSA where one is required, or provide legal advice.
+          Applicability depends on the client&apos;s scope, obligations, contracts, and operating
+          environment.
+        </p>
+        <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
+          We review each request for fit and use the information you provide to prepare a focused
+          first conversation. A paid diagnostic is recommended only when it is the appropriate next
+          step.
+        </p>
       </Section>
     </>
   );

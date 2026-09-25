@@ -31,6 +31,8 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const brandPromise = "Achieve compliance. Demonstrate it. Sustain it.";
+
 export const whitePaperDownload = {
   href: "/downloads/COMPLY_UCF_Conceptual_Methodology_White_Paper.pdf",
   filename: "COMPLY_UCF_Conceptual_Methodology_White_Paper.pdf",
@@ -154,6 +156,8 @@ export const startHereOffers = [
     bestFor: "Leaders who need a grounded starting point",
     trigger: "A customer, auditor, board, or regulator has raised the pressure.",
     deliverable: "A focused discussion of scope, obligations, current posture, and the most useful next step.",
+    clientProvides: "The immediate pressure, the questions you are trying to answer, and any known deadline.",
+    nextStep: "Book a clarity conversation",
     icon: Users,
   },
   {
@@ -161,6 +165,8 @@ export const startHereOffers = [
     bestFor: "Teams that need to know what is missing",
     trigger: "You need a defensible view before choosing a framework, audit, or remediation plan.",
     deliverable: "A prioritized findings register, evidence view, and practical remediation roadmap.",
+    clientProvides: "Your current scope, key stakeholders, existing policies, and representative evidence.",
+    nextStep: "Discuss a baseline",
     icon: Target,
   },
   {
@@ -168,6 +174,8 @@ export const startHereOffers = [
     bestFor: "Organizations preparing for an external assessment",
     trigger: "Controls, ownership, documentation, or evidence need to become audit-ready.",
     deliverable: "A scoped readiness program connecting requirements, controls, evidence, and accountable owners.",
+    clientProvides: "The target framework, assessment horizon, operating context, and access to responsible owners.",
+    nextStep: "Plan a readiness build",
     icon: ClipboardCheck,
   },
   {
@@ -175,6 +183,8 @@ export const startHereOffers = [
     bestFor: "Teams that want to stay ready between audits",
     trigger: "Evidence and control activity drift after the initial assessment.",
     deliverable: "A repeatable review, reporting, and improvement rhythm that keeps compliance current.",
+    clientProvides: "Existing review routines, evidence owners, management priorities, and recurring pain points.",
+    nextStep: "Discuss ongoing governance",
     icon: RefreshCw,
   },
 ];

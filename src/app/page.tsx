@@ -16,6 +16,7 @@ import {
   pillars,
   prioritySegments,
   supportingSubheads,
+  brandPromise,
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -111,7 +112,7 @@ export default function Home() {
 
       <Section
         eyebrow="COMPLY solution"
-        title="One operating model for achieving, demonstrating, and sustaining compliance."
+        title={brandPromise}
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {pillars.map((pillar) => {

@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { SiteChrome } from "@/components/marketing/site-chrome";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { keywordDescription } from "@/lib/site-data";
+import { brandPromise, keywordDescription } from "@/lib/site-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "COMPLY helps organizations achieve and demonstrate security compliance while reducing audit effort, improving governance, and creating defensible compliance outcomes.",
   keywords: keywordDescription.split(", "),
   openGraph: {
-    title: "COMPLY | Achieve Compliance. Demonstrate Compliance. Leverage Your Edge.",
+    title: `COMPLY | ${brandPromise}`,
     description:
       "Evidence-driven compliance management, risk governance, audit readiness, and continuous compliance oversight.",
     url: "https://mycomply.ai",

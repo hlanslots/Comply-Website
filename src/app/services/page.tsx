@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import { AuditReadinessJourney } from "@/components/marketing/visuals";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { services, startHereOffers } from "@/lib/site-data";
+import { brandPromise, services, startHereOffers } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -19,7 +22,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="A practical starting point for audit-ready compliance."
-        description="Start with the level of support that matches your pressure, scope, and maturity. COMPLY then brings the right practitioners, services, and Workbenches into the engagement."
+        description={`${brandPromise} Start with the level of support that matches your pressure, scope, and maturity. COMPLY then brings the right practitioners, services, and Workbenches into the engagement.`}
         className="py-14 sm:py-18"
       />
       <Section
@@ -45,6 +48,21 @@ export default function ServicesPage() {
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {offer.deliverable}
                     </p>
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                      What you provide
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {offer.clientProvides}
+                    </p>
+                    <Link
+                      href="/contact"
+                      className={cn(
+                        buttonVariants({ variant: "outline", size: "sm" }),
+                        "mt-5 w-full justify-center rounded-md",
+                      )}
+                    >
+                      {offer.nextStep} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

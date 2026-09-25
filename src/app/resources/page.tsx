@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Download, FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Download, FileText } from "lucide-react";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import {
   resourceCategories,
   resourceHighlights,
   whitePaperDownload,
+  brandPromise,
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +37,7 @@ export default function ResourcesPage() {
       <PageHero
         eyebrow="Resources"
         title="Compliance intelligence for governance and audit readiness leaders."
-        description="Explore practical resources for security compliance, GRC, risk management, evidence management, and audit readiness."
+        description={`${brandPromise} Explore practical resources for security compliance, GRC, risk management, evidence management, and audit readiness.`}
         className="py-14 sm:py-18"
       />
       <Section title="Featured resources" className="pt-2 pb-8 sm:pt-3 sm:pb-10 lg:pt-8">
@@ -132,6 +134,15 @@ export default function ResourcesPage() {
                   <span className="font-semibold text-foreground">You will leave with: </span>
                   {resource.outcome}
                 </p>
+                <Link
+                  href="/contact"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-5 w-full justify-center rounded-md",
+                  )}
+                >
+                  Discuss your situation <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </CardContent>
             </Card>
           ))}

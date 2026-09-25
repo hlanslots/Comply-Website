@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
-import { footerColumns } from "@/lib/site-data";
+import { brandPromise, footerColumns } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -46,7 +46,7 @@ export function SiteFooter() {
         </div>
         <Separator className="my-10" />
         <div className="flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Achieve Compliance. Demonstrate Compliance. Leverage Your Edge.</p>
+          <p>{brandPromise}</p>
           <p>© {new Date().getFullYear()} COMPLY. All rights reserved.</p>
         </div>
       </div>

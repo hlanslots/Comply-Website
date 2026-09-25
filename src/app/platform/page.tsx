@@ -113,9 +113,9 @@ export default function PlatformPage() {
         </div>
       </Section>
       <Section
-        eyebrow="Architecture"
-        title="An operational database for compliance, audit, risk, and control management."
-        description="The COMPLY platform model brings frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling into one connected system of record."
+        eyebrow="Connected delivery model"
+        title="A connected model behind practitioner delivery."
+        description="Behind the engagement, COMPLY connects frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling so practitioners can produce clearer, more defensible client outputs."
         className="bg-muted/45"
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
