@@ -35,8 +35,8 @@ export function FrameworkGuidePage({ framework }: { framework: FrameworkPage }) 
       </Section>
       <Section
         eyebrow="Practitioner delivery"
-        title="The Workbenches support the engagement behind the scenes."
-        description="COMPLY practitioners use purpose-built Workbenches to structure the work. Client-facing access, reports, exports, representative screenshots, or selected views depend on the engagement."
+        title="How the Workbenches support your engagement."
+        description="COMPLY practitioners use purpose-built Workbenches to structure assessments, evidence, and decisions. Depending on the engagement, clients may receive representative screenshots, selected views, reports, exports, or controlled access."
         className="bg-muted/45"
       >
         <div className="grid gap-4 md:grid-cols-3">

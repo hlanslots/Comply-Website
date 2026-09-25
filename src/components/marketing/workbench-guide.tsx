@@ -17,7 +17,7 @@ export function WorkbenchGuidePage({ workbench }: { workbench: WorkbenchPage }) 
         description={`${brandPromise} ${workbench.description}`}
         className="py-14 sm:py-18"
       />
-      <Section eyebrow="Start with the engagement pressure" title="A Workbench behind a practical client outcome.">
+      <Section eyebrow="Start with the engagement pressure" title="A Workbench supporting a practical client outcome.">
         <div className="grid gap-4 lg:grid-cols-3">
           {[
             ["Best for", workbench.bestFor],
@@ -36,7 +36,7 @@ export function WorkbenchGuidePage({ workbench }: { workbench: WorkbenchPage }) 
       <Section
         eyebrow="Representative practitioner workflow"
         title="How COMPLY practitioners use it during an engagement."
-        description="The Workbench supports the practitioner’s delivery workflow. The client-facing report, export, representative screenshot, selected view, or controlled access is defined by the engagement need – not assumed to be unrestricted portal access."
+        description="The Workbench supports the practitioner’s delivery workflow. Depending on the engagement need, the client-facing outcome may include a report, export, representative screenshot, selected view, or controlled access."
         className="bg-muted/45"
       >
         <div className="grid gap-4 md:grid-cols-2">

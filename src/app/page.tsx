@@ -28,15 +28,15 @@ export default function Home() {
         <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:grid-cols-[1fr_18rem] lg:items-center lg:py-16 lg:pt-40 lg:pb-8">
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
-              Expert-led security compliance for growing companies under customer, audit, or regulatory pressure.
+              Expert-led security compliance for small and mid-size companies at every stage, under customer, audit, or regulatory pressure.
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-7 text-white/72 sm:text-xl">
               <span className="block">
                 COMPLY helps lean teams assess risk, unify controls, organize evidence, and prepare
                 for ISO 27001, ISO 42001, SOC 2, PCI DSS, NIST, DORA, GDPR, and related requirements.
-                Our practitioners use purpose-built Workbenches behind the scenes. You receive clear
-                findings, a prioritized roadmap, and evidence your customers, auditors, and leadership
-                can follow.
+                Our practitioners use purpose-built Workbenches to structure the engagement. Depending on
+                your needs, you may receive representative screenshots, selected views, reports, exports,
+                or controlled access, alongside clear findings and a prioritized roadmap.
               </span>
               <span className="mt-10 block text-sm font-semibold leading-6 text-white/90 sm:mt-12 sm:text-base lg:mt-16 lg:whitespace-nowrap lg:text-[clamp(0.7rem,1.18vw,1rem)]">
                 <span className="text-primary">C</span>onsolidate requirements.{" "}
@@ -89,8 +89,8 @@ export default function Home() {
 
       <Section
         eyebrow="Who COMPLY helps"
-        title="Practical compliance support for teams that are growing faster than their control environment."
-        description="COMPLY is built for small and mid-size organizations that need credible progress without building a large in-house compliance function."
+        title="Practical compliance support for small and mid-size companies at every stage of maturity."
+        description="Whether you are building a program, strengthening an established one, or responding to a new requirement, COMPLY provides credible progress without requiring a large in-house compliance function."
       >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {prioritySegments.map((segment) => {

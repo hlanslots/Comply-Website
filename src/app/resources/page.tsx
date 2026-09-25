@@ -121,7 +121,7 @@ export default function ResourcesPage() {
       <Section
         eyebrow="Start with a useful question"
         title="Practical guidance for the next decision."
-        description="The resource library will grow around the questions small and mid-size teams face before they commit to a larger compliance program."
+        description="The resource library focuses on the questions small and mid-size teams face as they build, strengthen, or extend a compliance program."
         className="bg-muted/45 pt-8 sm:pt-10"
       >
         <div className="grid gap-4 md:grid-cols-2">

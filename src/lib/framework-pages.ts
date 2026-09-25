@@ -10,7 +10,7 @@ export type FrameworkPage = {
 
 export const frameworkPages: Record<string, FrameworkPage> = {
   "iso-27001": {
-    title: "ISO 27001 readiness for growing companies",
+    title: "ISO 27001 readiness for small and mid-size organizations",
     description:
       "Build a practical information security management system that connects scope, risk, controls, ownership, and evidence before an independent certification review.",
     bestFor:

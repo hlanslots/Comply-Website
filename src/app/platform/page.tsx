@@ -38,8 +38,8 @@ export default function PlatformPage() {
       <Section
         id="workbenches"
         eyebrow="Representative practitioner views"
-        title="The Workbenches behind the engagement."
-        description="These are not self-service product promises. COMPLY practitioners use the Workbenches to structure assessment and readiness work, then provide the client-facing reports, exports, representative screenshots, selected views, or controlled access agreed for the engagement."
+        title="How the Workbenches support the engagement."
+        description="COMPLY practitioners use the Workbenches to structure assessment and readiness work. Depending on the engagement, clients may receive reports, exports, representative screenshots, selected views, or controlled access."
         className="pt-2 sm:pt-3 lg:pt-8"
       >
         <div className="grid gap-4 md:grid-cols-2">
@@ -126,8 +126,8 @@ export default function PlatformPage() {
       </Section>
       <Section
         eyebrow="Connected delivery model"
-        title="A connected model behind practitioner delivery."
-        description="Behind the engagement, COMPLY connects frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling so practitioners can produce clearer, more defensible client outputs."
+        title="A connected model for practitioner delivery."
+        description="Within the engagement, COMPLY connects frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling so practitioners can produce clearer, more defensible client outputs."
         className="bg-muted/45"
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
