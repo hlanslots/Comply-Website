@@ -236,54 +236,64 @@ export const supportingSubheads = [
   {
     title:
       "A framework-agnostic model that unifies control intent, completeness criteria, and evidence artifacts.",
+    icon: Layers3,
     description:
       "COMPLY separates what a control is meant to achieve, what criteria must be satisfied, and what evidence proves the control is operating. That structure allows one compliance model to work across multiple frameworks without rebuilding the program for each audit.",
   },
   {
     title: "UCC defines what auditors expect as objective evidence every time.",
+    icon: ClipboardCheck,
     description:
       "UCC (Universal Control Criteria) creates a consistent completeness standard for evaluating controls. Instead of relying on vague documentation, teams can assess whether the evidence supports the required criteria in a repeatable and auditable way.",
   },
   {
     title:
       "COMPLY Artifacts turn evidence into structured, purpose-built objects mapped to controls and criteria.",
+    icon: FileCheck2,
     description:
       "Artifacts are designed to show why evidence exists, which control it supports, which criteria it addresses, and whether it demonstrates design, existence, or operational effectiveness. This makes evidence easier to review, reuse, and defend.",
   },
   {
     title: "End-to-end traceability supports defensible audit conclusions.",
+    icon: GitBranch,
     description:
       "Traceability connects requirements to controls, criteria, evidence artifacts, and audit conclusions. This gives auditors and leadership a clear path from obligation to proof, reducing ambiguity during assessment and review.",
   },
   {
     title: "Reuse evidence across frameworks to reduce duplication and audit fatigue.",
+    icon: RefreshCw,
     description:
       "When evidence is tied to unified controls and criteria, a single artifact can support multiple frameworks. That reduces repeated evidence collection, shortens audit preparation, and helps teams avoid redundant compliance work.",
   },
   {
     title:
       "Governance and oversight keep evidence current through ownership, reviews, internal audit, and management review.",
+    icon: Landmark,
     description:
       "COMPLY treats compliance as an ongoing operating rhythm. Ownership, review cycles, internal audit, management review, and corrective actions help ensure evidence remains current between formal audits.",
   },
   {
     title:
       "Risk is the driver: Unified Controls respond, UCC enforces completeness, and artifacts prove reality.",
+    icon: Activity,
     description:
       "The model links risk context to control expectations and evidence requirements. Controls respond to risk, criteria define what complete implementation means, and artifacts show whether the control is working in practice.",
   },
   {
     title: "Prevent policy-only and tool-only compliance with operational evidence.",
+    icon: ShieldCheck,
     description:
       "Policies and tools are not enough by themselves. COMPLY focuses on operational evidence that demonstrates controls are implemented, reviewed, monitored, and producing reliable compliance outcomes.",
   },
   {
     title: "Automated gap detection highlights missing criteria and partial compliance.",
+    icon: Gauge,
     description:
       "Criteria-based review makes it easier to see which control expectations are fully supported, partially supported, or missing evidence. This turns gaps into clear remediation work instead of vague audit findings.",
   },
   {
     title: "A single integrated compliance evidence system built to be auditable and defensible.",
+    icon: Network,
     description:
       "The model brings controls, criteria, artifacts, traceability, risk, and governance into one evidence system. The result is a more durable compliance foundation that supports audit readiness and continuous oversight.",
   },

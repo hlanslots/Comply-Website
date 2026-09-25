@@ -160,21 +160,27 @@ export default function Home() {
         className="bg-muted/45"
       >
         <div className="grid gap-4 md:grid-cols-2">
-          {supportingSubheads.map((subhead, index) => (
-            <Card key={subhead.title} className="h-full bg-card/80">
-              <CardContent className="flex h-full gap-4 p-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 font-mono text-xs font-semibold text-primary">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="font-semibold leading-7">{subhead.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {subhead.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {supportingSubheads.map((subhead) => {
+            const Icon = subhead.icon;
+            return (
+              <Card key={subhead.title} className="h-full bg-card/80">
+                <CardContent className="flex h-full gap-4 p-6">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary"
+                  >
+                    <Icon className="h-5 w-5" strokeWidth={1.8} />
+                  </span>
+                  <div>
+                    <h3 className="font-semibold leading-7">{subhead.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {subhead.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </Section>
 
