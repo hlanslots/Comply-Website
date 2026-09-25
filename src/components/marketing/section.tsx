@@ -15,6 +15,7 @@ export function Section({
   children,
   className,
   headingLevel = "h2",
+  id,
 }: {
   eyebrow?: string;
   title: string;
@@ -22,11 +23,12 @@ export function Section({
   children?: ReactNode;
   className?: string;
   headingLevel?: "h1" | "h2";
+  id?: string;
 }) {
   const Heading = headingLevel;
 
   return (
-    <section className={cn("py-14 sm:py-16 lg:py-24", className)}>
+    <section id={id} className={cn("py-14 sm:py-16 lg:py-24", className)}>
       <div className="site-shell">
         <div className="mb-10 max-w-3xl">
           {eyebrow ? <Badge className="mb-4 rounded-md">{eyebrow}</Badge> : null}

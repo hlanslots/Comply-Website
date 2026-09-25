@@ -44,6 +44,50 @@ export default function AboutPage() {
           </CardContent>
         </Card>
       </Section>
+      <Section
+        eyebrow="People and perspective"
+        title="Client-side experience, assessment discipline, and practical delivery."
+        description="COMPLY is closely associated with AnsecGroup and is shaped by people who understand the pressure from both sides of a security compliance engagement."
+        className="bg-muted/45 pt-8 sm:pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
+          <Card className="bg-card/80">
+            <CardContent className="p-6 lg:p-8">
+              <h2 className="text-xl font-semibold sm:text-2xl">A practitioner-led approach</h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                The team combines years of experience helping organizations operate security
+                programs, prepare for assessments, evaluate controls, and explain compliance
+                outcomes to leadership. That perspective keeps the work grounded in what owners
+                can actually execute—not only what a framework says on paper.
+              </p>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Engagements are designed to leave clients with clearer decisions, accountable
+                owners, usable evidence, and a roadmap that remains useful after the report is
+                delivered.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-card/80">
+            <CardContent className="flex h-full flex-col p-6 lg:p-8">
+              <h2 className="text-xl font-semibold sm:text-2xl">Learn more about the team</h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Explore the broader AnsecGroup team and its security, privacy, risk, and compliance
+                experience before you start a conversation with COMPLY.
+              </p>
+              <div className="mt-auto pt-6">
+                <a
+                  href="https://ansecgroup.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-md")}
+                >
+                  Visit AnsecGroup <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </Section>
       <Section title="Our Approach" className="bg-muted/45 pt-6 sm:pt-8">
         <div className="grid gap-4 md:grid-cols-3">
           {[

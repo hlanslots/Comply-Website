@@ -10,6 +10,13 @@ type ContactPayload = {
   title?: unknown;
   email?: unknown;
   phone?: unknown;
+  companySize?: unknown;
+  industry?: unknown;
+  complianceNeed?: unknown;
+  deadline?: unknown;
+  trigger?: unknown;
+  currentState?: unknown;
+  desiredOutcome?: unknown;
   message?: unknown;
   website?: unknown;
   source?: unknown;
@@ -59,10 +66,17 @@ export async function POST(request: Request) {
   const title = asText(payload.title);
   const email = asText(payload.email);
   const phone = asText(payload.phone);
+  const companySize = asText(payload.companySize);
+  const industry = asText(payload.industry);
+  const complianceNeed = asText(payload.complianceNeed);
+  const deadline = asText(payload.deadline);
+  const trigger = asText(payload.trigger);
+  const currentState = asText(payload.currentState);
+  const desiredOutcome = asText(payload.desiredOutcome);
   const message = asText(payload.message);
   const sourceLabel = getSourceLabel(asText(payload.source));
 
-  if (!name || !company || !email || !message) {
+  if (!name || !company || !email) {
     return Response.json(
       { error: "Please complete the required fields." },
       { status: 400 },
@@ -83,7 +97,14 @@ export async function POST(request: Request) {
     ["Title", title || "Not provided"],
     ["Email", email],
     ["Phone", phone || "Not provided"],
-    ["Message", message],
+    ["Company size", companySize || "Not provided"],
+    ["Industry", industry || "Not provided"],
+    ["Framework or requirement", complianceNeed || "Not provided"],
+    ["Important deadline", deadline || "Not provided"],
+    ["What prompted this now", trigger || "Not provided"],
+    ["Current compliance state", currentState || "Not provided"],
+    ["Desired outcome", desiredOutcome || "Not provided"],
+    ["Additional message", message || "Not provided"],
   ];
 
   const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n\n");

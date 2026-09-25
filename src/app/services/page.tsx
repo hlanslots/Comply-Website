@@ -5,7 +5,7 @@ import { PageHero, Section } from "@/components/marketing/section";
 import { AuditReadinessJourney } from "@/components/marketing/visuals";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { services } from "@/lib/site-data";
+import { services, startHereOffers } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -18,10 +18,40 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Expert services for audit-ready compliance programs."
-        description="From readiness and assessments to governance reviews and program optimization, COMPLY helps teams build defensible compliance outcomes."
+        title="A practical starting point for audit-ready compliance."
+        description="Start with the level of support that matches your pressure, scope, and maturity. COMPLY then brings the right practitioners, services, and Workbenches into the engagement."
         className="py-14 sm:py-18"
       />
+      <Section
+        eyebrow="Start here"
+        title="Choose the next useful step."
+        description="You do not need to arrive with a finished scope. We can help clarify the problem first, then define the right assessment or readiness path."
+        className="pt-2 sm:pt-3 lg:pt-8"
+      >
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {startHereOffers.map((offer) => {
+            const Icon = offer.icon;
+            return (
+              <Card key={offer.title} className="h-full bg-card/80">
+                <CardContent className="flex h-full flex-col p-6">
+                  <Icon className="mb-5 h-7 w-7 text-primary" />
+                  <h2 className="text-xl font-semibold leading-7">{offer.title}</h2>
+                  <p className="mt-4 text-sm font-semibold text-foreground">{offer.bestFor}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{offer.trigger}</p>
+                  <div className="mt-auto pt-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                      What you receive
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {offer.deliverable}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </Section>
       <Section title="Service offerings" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid gap-4 md:grid-cols-2">
           {services.map((service) => {
@@ -75,6 +105,17 @@ export default function ServicesPage() {
         className="bg-muted/45"
       >
         <AuditReadinessJourney />
+      </Section>
+      <Section eyebrow="Scope and independence" title="What COMPLY does—and does not do.">
+        <Card className="bg-card/80">
+          <CardContent className="p-6 leading-7 text-muted-foreground lg:p-8">
+            COMPLY supports readiness, governance, evidence, risk management, and internal
+            assessment. COMPLY does not issue ISO certifications, replace an independent auditor
+            or certification body, act as a QSA where one is required, or provide legal advice.
+            Applicability depends on the client’s scope, obligations, contracts, and operating
+            environment.
+          </CardContent>
+        </Card>
       </Section>
     </>
   );

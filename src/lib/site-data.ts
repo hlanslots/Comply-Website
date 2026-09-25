@@ -115,6 +115,70 @@ export const frameworks = [
   "NIS2",
 ];
 
+export const prioritySegments = [
+  {
+    title: "B2B SaaS and technology vendors",
+    description:
+      "Turn customer security questionnaires, procurement requests, and assurance commitments into a repeatable compliance program.",
+    icon: Network,
+  },
+  {
+    title: "Fintech, payments, and e-commerce",
+    description:
+      "Coordinate PCI DSS, privacy, resilience, and customer-control expectations without running separate evidence projects.",
+    icon: Scale,
+  },
+  {
+    title: "Financial services and ICT suppliers",
+    description:
+      "Prepare for regulated customer expectations, DORA-related obligations, and evidence requests with clearer ownership and traceability.",
+    icon: Landmark,
+  },
+  {
+    title: "Data-intensive professional services",
+    description:
+      "Build confidence around sensitive client data, access, continuity, and the controls that protect trust-based relationships.",
+    icon: Users,
+  },
+  {
+    title: "Organizations using AI",
+    description:
+      "Connect information security, privacy, and AI governance expectations as products and internal workflows evolve.",
+    icon: ShieldCheck,
+  },
+];
+
+export const startHereOffers = [
+  {
+    title: "Compliance Clarity Conversation",
+    bestFor: "Leaders who need a grounded starting point",
+    trigger: "A customer, auditor, board, or regulator has raised the pressure.",
+    deliverable: "A focused discussion of scope, obligations, current posture, and the most useful next step.",
+    icon: Users,
+  },
+  {
+    title: "Baseline and Gap Assessment",
+    bestFor: "Teams that need to know what is missing",
+    trigger: "You need a defensible view before choosing a framework, audit, or remediation plan.",
+    deliverable: "A prioritized findings register, evidence view, and practical remediation roadmap.",
+    icon: Target,
+  },
+  {
+    title: "Readiness Build",
+    bestFor: "Organizations preparing for an external assessment",
+    trigger: "Controls, ownership, documentation, or evidence need to become audit-ready.",
+    deliverable: "A scoped readiness program connecting requirements, controls, evidence, and accountable owners.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Continuous Compliance Governance",
+    bestFor: "Teams that want to stay ready between audits",
+    trigger: "Evidence and control activity drift after the initial assessment.",
+    deliverable: "A repeatable review, reporting, and improvement rhythm that keeps compliance current.",
+    icon: RefreshCw,
+  },
+];
+
 export const outcomes = [
   {
     title: "Defensible Audit Conclusions",
@@ -666,6 +730,49 @@ export const platformSections = [
   },
 ];
 
+export const workbenchSummaries = [
+  {
+    title: "COMPLY-RISK",
+    description:
+      "Supports ISO-aligned risk assessments by connecting assets, vulnerabilities, threats, evaluations, risk treatment, ownership, and evidence context.",
+    practitionerUse:
+      "COMPLY practitioners use it to structure assessment work and turn risk decisions into a clear client roadmap.",
+    clientOutput:
+      "Depending on the engagement, clients may receive a risk register, treatment plan, findings summary, or selected controlled views.",
+    icon: Scale,
+  },
+  {
+    title: "COMPLY-UCF",
+    description:
+      "Creates a unified control framework for the client’s defined compliance scope by mapping obligations, framework controls, applicability, and local control intent.",
+    practitionerUse:
+      "COMPLY practitioners use it to rationalize overlapping requirements and create one defensible control backbone.",
+    clientOutput:
+      "Clients receive the agreed control framework, mapping rationale, applicability decisions, and engagement-specific exports or reports.",
+    icon: Layers3,
+  },
+  {
+    title: "COMPLY-SSA",
+    description:
+      "Supports security-stack assessments by connecting client context, engagement scope, frameworks, technologies, control coverage, and assessment findings.",
+    practitionerUse:
+      "COMPLY practitioners use it to evaluate whether the security stack supports the controls the business needs to operate.",
+    clientOutput:
+      "Clients may receive a security-stack assessment, coverage findings, ownership actions, and prioritized improvement recommendations.",
+    icon: Network,
+  },
+  {
+    title: "COMPLY-DOCS",
+    description:
+      "Provides a governed Compliance Evidence Repository for organizing documents and evidence artifacts, mapping them to controls, and managing review status.",
+    practitionerUse:
+      "COMPLY practitioners use it to keep engagement evidence structured, traceable, reviewable, and reusable across frameworks.",
+    clientOutput:
+      "Clients may receive evidence registers, audit-ready packages, selected repository views, or controlled access when the engagement calls for it.",
+    icon: FileCheck2,
+  },
+];
+
 export const platformMetrics = [
   { value: "44", label: "Base tables" },
   { value: "114", label: "Table occurrences" },
@@ -726,6 +833,23 @@ export const resourceCategories = [
   "Risk Management Guides",
   "Governance Resources",
   "Audit Readiness Resources",
+];
+
+export const resourceHighlights = [
+  {
+    title: "Readiness Scorecard",
+    audience: "For founders, executives, and security leaders",
+    description:
+      "Use a practical set of questions to identify whether your current compliance effort is ready for customer, audit, or regulatory scrutiny.",
+    outcome: "See where to focus before investing in a larger readiness program.",
+  },
+  {
+    title: "From Requirement to Evidence",
+    audience: "For compliance, security, and control owners",
+    description:
+      "Learn how to connect obligations, controls, evidence, reviews, and conclusions so the next audit request does not restart the work.",
+    outcome: "Create evidence that is easier to review, reuse, and defend.",
+  },
 ];
 
 export const differentiators = [

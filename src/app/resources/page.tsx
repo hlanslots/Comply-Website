@@ -4,7 +4,11 @@ import { Download, FileText } from "lucide-react";
 import { PageHero, Section } from "@/components/marketing/section";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { resourceCategories, whitePaperDownload } from "@/lib/site-data";
+import {
+  resourceCategories,
+  resourceHighlights,
+  whitePaperDownload,
+} from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 const riskManagementVideo = {
@@ -109,6 +113,29 @@ export default function ResourcesPage() {
             </CardContent>
           </Card>
         ) : null}
+      </Section>
+      <Section
+        eyebrow="Start with a useful question"
+        title="Practical guidance for the next decision."
+        description="The resource library will grow around the questions small and mid-size teams face before they commit to a larger compliance program."
+        className="bg-muted/45 pt-8 sm:pt-10"
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          {resourceHighlights.map((resource) => (
+            <Card key={resource.title} className="h-full bg-card/80">
+              <CardContent className="p-6 lg:p-8">
+                <FileText className="mb-5 h-7 w-7 text-primary" />
+                <h2 className="text-xl font-semibold sm:text-2xl">{resource.title}</h2>
+                <p className="mt-3 text-sm font-semibold text-foreground">{resource.audience}</p>
+                <p className="mt-3 leading-7 text-muted-foreground">{resource.description}</p>
+                <p className="mt-5 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                  <span className="font-semibold text-foreground">You will leave with: </span>
+                  {resource.outcome}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </Section>
       <Section title="Resource center" className="bg-muted/45 pt-6 sm:pt-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
