@@ -51,6 +51,39 @@ export default function PlatformPage() {
                       Practitioner Workbench
                     </Badge>
                   </div>
+                  <div
+                    className="mb-6 rounded-lg border border-border bg-background/80 p-3 shadow-inner"
+                    aria-label={`${section.title} representative screenshot`}
+                  >
+                    <div className="flex items-center justify-between gap-3 border-b border-border pb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-primary" />
+                        <span className="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">
+                          COMPLY WORKBENCH
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                        Representative view
+                      </span>
+                    </div>
+                    <div className="mt-3 grid gap-2">
+                      {["Engagement scope", "Control and evidence links", "Review status", "Client-ready output"].map(
+                        (label, index) => (
+                          <div key={label} className="flex items-center gap-2">
+                            <span className="h-2 flex-1 rounded-full bg-primary/15" />
+                            <span className="w-28 text-right text-[10px] text-muted-foreground">
+                              {label}
+                            </span>
+                            <span className="h-2 w-8 rounded-full bg-primary/35" aria-hidden="true" />
+                            <span className="sr-only">Step {index + 1}</span>
+                          </div>
+                        ),
+                      )}
+                    </div>
+                    <p className="mt-3 text-[10px] leading-4 text-muted-foreground">
+                      Illustrative screen treatment—not live portal access.
+                    </p>
+                  </div>
                   <h2 className="text-xl font-semibold">{section.title}</h2>
                   <p className="mt-3 leading-7 text-muted-foreground">
                     {section.description}
