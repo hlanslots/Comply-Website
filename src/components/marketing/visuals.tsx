@@ -175,7 +175,7 @@ export function TraceabilityFlow() {
         <div className="grid auto-rows-fr gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {traceabilityNodes.map((node, index) => (
             <div key={node.title} className="relative h-full">
-              <div className="flex h-full min-h-0 flex-col rounded-md border border-border bg-background p-4 lg:min-h-72">
+              <div className="flex h-full min-h-0 flex-col rounded-md border border-border bg-background p-4">
                 <div className="flex items-start gap-3">
                   <Badge variant="secondary" className="mt-0.5 rounded-md font-mono">
                     0{index + 1}

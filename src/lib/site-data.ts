@@ -1031,27 +1031,27 @@ export const traceabilityNodes = [
   {
     title: "Requirement",
     description:
-      "The traceability chain begins with the obligation the organization must satisfy, whether it comes from a law, regulation, contract, customer requirement, internal policy, or security framework. COMPLY captures the requirement as the authoritative source of compliance intent so every downstream control, evidence artifact, and audit conclusion can be tied back to a clear obligation.",
+      "Capture the obligation that drives the work, whether it comes from law, regulation, contract, customer demand, policy, or a framework. Every downstream decision traces back to it.",
   },
   {
     title: "Framework Control",
     description:
-      "Framework controls translate requirements into recognized compliance expectations such as ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, or CIS Controls. COMPLY maps these controls through the control library so overlapping obligations can be rationalized, compared, and reused instead of being managed as disconnected audit workstreams.",
+      "Translate the requirement into recognized expectations from ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, or CIS. Map overlaps once so obligations stay reusable.",
   },
   {
     title: "Local Control & Criteria",
     description:
-      "Local controls define how the organization actually satisfies the mapped framework expectations in its own environment. Criteria, applicability, ownership, implementation guidance, and operating expectations establish what must be true for the control to be considered designed, implemented, operating, and ready for review.",
+      "Define how the organization meets the framework expectation in its own environment, including applicability, ownership, guidance, and what must be true for review.",
   },
   {
     title: "Evidence Artifact",
     description:
-      "Evidence artifacts provide the proof that controls are operating in practice. COMPLY links documents, screenshots, tickets, reports, logs, approvals, reviews, and other evidence directly to the relevant criteria and controls, allowing evidence quality, completeness, reuse, and audit relevance to be evaluated before the audit begins.",
+      "Link documents, screenshots, tickets, reports, approvals, and other proof to the relevant controls and criteria so evidence quality and reuse can be assessed.",
   },
   {
     title: "Audit / Report",
     description:
-      "Audit-ready outputs consolidate the traceability chain into defensible reporting. Risk registers, Statements of Applicability, audit criteria, control mappings, evidence packages, findings, and management reports show what was assessed, what evidence supports the conclusion, and where remediation or governance action is required.",
+      "Bring the traceability chain into defensible reports, showing what was assessed, what supports the conclusion, and where remediation or governance action remains.",
   },
 ];
 
