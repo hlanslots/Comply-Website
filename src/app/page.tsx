@@ -97,13 +97,13 @@ export default function Home() {
             const Icon = segment.icon;
             return (
               <Card key={segment.title} className="h-full bg-card/80">
-                <CardContent className="h-full p-5">
+                <CardContent className="flex h-full flex-col p-5">
                   <Icon className="mb-5 h-7 w-7 text-primary" />
                   <h3 className="font-semibold leading-6">{segment.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     {segment.description}
                   </p>
-                  <div className="mt-5 border-t border-border pt-4">
+                  <div className="mt-auto border-t border-border pt-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                       Typical trigger
                     </p>
@@ -114,10 +114,11 @@ export default function Home() {
                       href="/services#start-here"
                       className={cn(
                         buttonVariants({ variant: "outline", size: "sm" }),
-                        "mt-4 w-full justify-center rounded-md",
+                        "mt-4 h-auto min-h-7 w-full justify-center rounded-md px-2 py-1 text-center text-xs leading-4 whitespace-normal",
                       )}
                     >
-                      {segment.firstOffer} <ArrowRight className="ml-2 h-4 w-4" />
+                      <span className="min-w-0 break-words text-center">{segment.firstOffer}</span>
+                      <ArrowRight className="ml-1 h-3.5 w-3.5 shrink-0" />
                     </Link>
                   </div>
                 </CardContent>
