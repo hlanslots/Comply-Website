@@ -903,6 +903,51 @@ export const frameworkGuideCards = [
   },
 ];
 
+export const additionalFrameworkGuideCards = [
+  {
+    title: "ISO 42001 and AI governance",
+    description:
+      "Build a practical AI management system around use cases, risk, accountability, controls, evidence, and continual improvement.",
+    href: "/frameworks/iso-42001",
+  },
+  {
+    title: "PCI DSS readiness",
+    description:
+      "Organize cardholder-data scope, control ownership, evidence, and remediation priorities before independent validation.",
+    href: "/frameworks/pci-dss",
+  },
+  {
+    title: "NIST SP 800-53 readiness",
+    description:
+      "Translate NIST SP 800-53 controls and baselines into a scoped, owned, evidenced, and reviewable program.",
+    href: "/frameworks/nist-sp-800-53",
+  },
+  {
+    title: "NIST CSF profiles",
+    description:
+      "Create current and target profiles, risk-based priorities, and an action plan for practical cyber risk management.",
+    href: "/frameworks/nist-csf",
+  },
+  {
+    title: "CIS Controls priorities",
+    description:
+      "Turn CIS Controls into a practical, risk-informed improvement roadmap for lean security and IT teams.",
+    href: "/frameworks/cis-controls",
+  },
+  {
+    title: "DORA and ICT risk",
+    description:
+      "Organize digital operational resilience, ICT risk, third-party, testing, and evidence expectations.",
+    href: "/frameworks/dora",
+  },
+  {
+    title: "GDPR security readiness",
+    description:
+      "Connect personal-data security obligations to risk, controls, evidence, ownership, and review routines.",
+    href: "/frameworks/gdpr",
+  },
+];
+
 export const teamProfiles = [
   {
     name: "Hans Lanslots, RI",

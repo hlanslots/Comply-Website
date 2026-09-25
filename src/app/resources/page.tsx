@@ -11,6 +11,7 @@ import {
   whitePaperDownload,
   brandPromise,
   frameworkGuideCards,
+  additionalFrameworkGuideCards,
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -169,6 +170,33 @@ export default function ResourcesPage() {
       >
         <div className="grid gap-4 md:grid-cols-3">
           {frameworkGuideCards.map((guide) => (
+            <Card key={guide.title} className="h-full bg-card/80">
+              <CardContent className="flex h-full flex-col p-6 lg:p-7">
+                <FileText className="mb-5 h-7 w-7 text-primary" />
+                <h2 className="text-xl font-semibold leading-7">{guide.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{guide.description}</p>
+                <Link
+                  href={guide.href}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-auto mt-6 w-full justify-center rounded-md",
+                  )}
+                >
+                  Explore the guide <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+      <Section
+        eyebrow="Additional framework paths"
+        title="Go deeper on the requirement driving the conversation."
+        description="These focused paths extend the framework coverage while keeping the same practitioner-led delivery model and engagement guardrails."
+        className="bg-muted/45"
+      >
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {additionalFrameworkGuideCards.map((guide) => (
             <Card key={guide.title} className="h-full bg-card/80">
               <CardContent className="flex h-full flex-col p-6 lg:p-7">
                 <FileText className="mb-5 h-7 w-7 text-primary" />
