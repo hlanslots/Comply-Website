@@ -7,20 +7,20 @@ if [[ -n "$(git status --porcelain)" ]]; then
 fi
 
 application_sha="${APPLICATION_SHA:-$(git rev-parse HEAD)}"
-deployment_json="$(vercel deploy --yes --force --format=json \
+deployment_output="$(vercel deploy --yes --force --format=json \
   --meta "applicationSha=${application_sha}" \
-  --meta "releaseTarget=preview")"
+  --meta "releaseTarget=preview" 2>&1)"
 
-node --input-type=module - "$deployment_json" "$application_sha" <<'NODE'
-const deployment = JSON.parse(process.argv[2]);
+node --input-type=module - "$deployment_output" "$application_sha" <<'NODE'
+const output = process.argv[2];
 const applicationSha = process.argv[3];
-const url = deployment.url ?? deployment.inspectorUrl;
+const url = output.match(/https:\/\/[^\s]+\.vercel\.app/)?.[0];
 if (!url) throw new Error("Vercel did not return a deployment URL");
 console.log(JSON.stringify({
   status: "deployed",
   applicationSha,
   previewUrl: url.startsWith("http") ? url : `https://${url}`,
-  previewArtifactId: deployment.id ?? deployment.uid ?? null,
+  previewArtifactId: null,
   provider: "vercel"
 }));
 NODE
