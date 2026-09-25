@@ -26,6 +26,7 @@ export default function ServicesPage() {
         className="py-14 sm:py-18"
       />
       <Section
+        id="start-here"
         eyebrow="Start here"
         title="Choose the next useful step."
         description="You do not need to arrive with a finished scope. We can help clarify the problem first, then define the right assessment or readiness path."

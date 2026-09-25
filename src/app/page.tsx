@@ -103,6 +103,23 @@ export default function Home() {
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     {segment.description}
                   </p>
+                  <div className="mt-5 border-t border-border pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                      Typical trigger
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {segment.trigger}
+                    </p>
+                    <Link
+                      href="/services#start-here"
+                      className={cn(
+                        buttonVariants({ variant: "outline", size: "sm" }),
+                        "mt-4 w-full justify-center rounded-md",
+                      )}
+                    >
+                      {segment.firstOffer} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             );

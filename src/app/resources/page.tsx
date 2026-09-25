@@ -10,6 +10,7 @@ import {
   resourceHighlights,
   whitePaperDownload,
   brandPromise,
+  frameworkGuideCards,
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -130,18 +131,57 @@ export default function ResourcesPage() {
                 <h2 className="text-xl font-semibold sm:text-2xl">{resource.title}</h2>
                 <p className="mt-3 text-sm font-semibold text-foreground">{resource.audience}</p>
                 <p className="mt-3 leading-7 text-muted-foreground">{resource.description}</p>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                  <span className="font-semibold text-foreground">Business problem: </span>
+                  {resource.businessProblem}
+                </p>
                 <p className="mt-5 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
                   <span className="font-semibold text-foreground">You will leave with: </span>
                   {resource.outcome}
                 </p>
                 <Link
-                  href="/contact"
+                  href={resource.href}
                   className={cn(
-                    buttonVariants({ variant: "outline", size: "sm" }),
+                    buttonVariants({ size: "sm" }),
                     "mt-5 w-full justify-center rounded-md",
                   )}
                 >
+                  Read the guide <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-3 w-full justify-center rounded-md",
+                  )}
+                >
                   Discuss your situation <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+      <Section
+        eyebrow="Priority framework guides"
+        title="Start with the framework pressure in front of you."
+        description="Use these plain-English paths to understand where COMPLY can help, what the engagement would cover, and what useful outputs you can expect."
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {frameworkGuideCards.map((guide) => (
+            <Card key={guide.title} className="h-full bg-card/80">
+              <CardContent className="flex h-full flex-col p-6 lg:p-7">
+                <FileText className="mb-5 h-7 w-7 text-primary" />
+                <h2 className="text-xl font-semibold leading-7">{guide.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{guide.description}</p>
+                <Link
+                  href={guide.href}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-auto mt-6 w-full justify-center rounded-md",
+                  )}
+                >
+                  Explore the guide <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>

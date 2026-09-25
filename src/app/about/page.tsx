@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero, Section } from "@/components/marketing/section";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { brandDifferentiators } from "@/lib/site-data";
+import { brandDifferentiators, teamProfiles } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-auto pt-6">
                 <a
-                  href="https://ansecgroup.com"
+                  href="https://www.ansecgroup.com/team"
                   target="_blank"
                   rel="noreferrer"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-md")}
@@ -86,6 +86,35 @@ export default function AboutPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {teamProfiles.map((profile) => (
+            <Card key={profile.name} className="h-full bg-card/80">
+              <CardContent className="p-6 lg:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                  Practitioner profile
+                </p>
+                <h2 className="mt-3 text-xl font-semibold sm:text-2xl">{profile.name}</h2>
+                <p className="mt-2 text-sm font-semibold text-foreground">{profile.role}</p>
+                <p className="mt-4 leading-7 text-muted-foreground">{profile.summary}</p>
+                <p className="mt-4 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                  <span className="font-semibold text-foreground">Client benefit: </span>
+                  {profile.clientBenefit}
+                </p>
+                <a
+                  href={profile.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-5 rounded-md",
+                  )}
+                >
+                  View LinkedIn profile
+                </a>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </Section>
       <Section title="Our Approach" className="bg-muted/45 pt-6 sm:pt-8">

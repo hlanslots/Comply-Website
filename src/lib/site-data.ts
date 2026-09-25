@@ -122,30 +122,40 @@ export const prioritySegments = [
     title: "B2B SaaS and technology vendors",
     description:
       "Turn customer security questionnaires, procurement requests, and assurance commitments into a repeatable compliance program.",
+    trigger: "An enterprise customer asks for evidence or a completed security questionnaire.",
+    firstOffer: "Baseline and Gap Assessment",
     icon: Network,
   },
   {
     title: "Fintech, payments, and e-commerce",
     description:
       "Coordinate PCI DSS, privacy, resilience, and customer-control expectations without running separate evidence projects.",
+    trigger: "PCI DSS, customer-assurance, or payment-partner pressure is creating a deadline.",
+    firstOffer: "Baseline and Gap Assessment",
     icon: Scale,
   },
   {
     title: "Financial services and ICT suppliers",
     description:
       "Prepare for regulated customer expectations, DORA-related obligations, and evidence requests with clearer ownership and traceability.",
+    trigger: "DORA, ICT-risk, or third-party-risk expectations need an accountable response.",
+    firstOffer: "DORA and ICT risk baseline",
     icon: Landmark,
   },
   {
     title: "Data-intensive professional services",
     description:
       "Build confidence around sensitive client data, access, continuity, and the controls that protect trust-based relationships.",
+    trigger: "Procurement or privacy questions threaten a client relationship or renewal.",
+    firstOffer: "Baseline and Gap Assessment",
     icon: Users,
   },
   {
     title: "Organizations using AI",
     description:
       "Connect information security, privacy, and AI governance expectations as products and internal workflows evolve.",
+    trigger: "An AI use case creates a need for security, privacy, or AI-governance clarity.",
+    firstOffer: "AI and security governance gap assessment",
     icon: ShieldCheck,
   },
 ];
@@ -849,16 +859,64 @@ export const resourceHighlights = [
   {
     title: "Readiness Scorecard",
     audience: "For founders, executives, and security leaders",
+    businessProblem:
+      "You need to know whether your current effort is ready for customer, audit, or regulatory scrutiny before committing to a larger program.",
     description:
       "Use a practical set of questions to identify whether your current compliance effort is ready for customer, audit, or regulatory scrutiny.",
     outcome: "See where to focus before investing in a larger readiness program.",
+    href: "/resources/readiness-scorecard",
   },
   {
     title: "From Requirement to Evidence",
     audience: "For compliance, security, and control owners",
+    businessProblem:
+      "Requirements, controls, evidence, and reviews are disconnected, so every audit request feels like starting over.",
     description:
       "Learn how to connect obligations, controls, evidence, reviews, and conclusions so the next audit request does not restart the work.",
     outcome: "Create evidence that is easier to review, reuse, and defend.",
+    href: "/resources/requirement-to-evidence",
+  },
+];
+
+export const frameworkGuideCards = [
+  {
+    title: "ISO 27001 readiness",
+    description:
+      "Build an information security management system that connects scope, risk, controls, ownership, and evidence before certification review.",
+    href: "/frameworks/iso-27001",
+  },
+  {
+    title: "SOC 2 readiness",
+    description:
+      "Turn trust service criteria into operating controls, evidence expectations, and a practical path toward Type 1 or Type 2 readiness.",
+    href: "/frameworks/soc-2",
+  },
+  {
+    title: "Multi-framework readiness",
+    description:
+      "Use one evidence and control operating model when ISO, SOC 2, NIST, PCI DSS, GDPR, DORA, or AI-governance obligations overlap.",
+    href: "/frameworks/multi-framework",
+  },
+];
+
+export const teamProfiles = [
+  {
+    name: "Hans Lanslots, RI",
+    role: "Information & Technology Leader | Co-Creator of C.O.M.P.L.Y.",
+    summary:
+      "Hans brings more than three decades of experience guiding complex, cross-functional IT organizations and designing secure technology environments across Europe and the United States.",
+    clientBenefit:
+      "Clients gain an executive and operational perspective that connects control design, technology decisions, and compliance objectives to how the business actually runs.",
+    href: "https://www.linkedin.com/in/hans-lanslots-ri-a602b938",
+  },
+  {
+    name: "Steffani Burd, Ph.D.",
+    role: "Founder of ANSEC | Co-Creator of C.O.M.P.L.Y.",
+    summary:
+      "Steffani develops empirically based solutions that protect information assets, improve business outcomes, and apply security compliance in practical settings.",
+    clientBenefit:
+      "Clients gain a research-informed advisor who can connect security auditing, investigative thinking, communication, and business improvement.",
+    href: "https://www.linkedin.com/in/steffaniburd",
   },
 ];
 
