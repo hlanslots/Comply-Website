@@ -1031,27 +1031,27 @@ export const traceabilityNodes = [
   {
     title: "Requirement",
     description:
-      "Capture the obligation that drives the work, whether it comes from law, regulation, contract, customer demand, policy, or a framework. Every downstream decision traces back to it.",
+      "Capture the obligation, from law, contract, customer demand, policy, or framework, that drives every downstream decision.",
   },
   {
     title: "Framework Control",
     description:
-      "Translate the requirement into recognized expectations from ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, or CIS. Map overlaps once so obligations stay reusable.",
+      "Translate the obligation into recognized framework expectations and map overlaps so controls can be reused.",
   },
   {
     title: "Local Control & Criteria",
     description:
-      "Define how the organization meets the framework expectation in its own environment, including applicability, ownership, guidance, and what must be true for review.",
+      "Define how the organization meets the expectation, including applicability, ownership, guidance, and review criteria.",
   },
   {
     title: "Evidence Artifact",
     description:
-      "Link documents, screenshots, tickets, reports, approvals, and other proof to the relevant controls and criteria so evidence quality and reuse can be assessed.",
+      "Link supporting proof to controls and criteria so evidence quality, completeness, and reuse can be assessed.",
   },
   {
     title: "Audit / Report",
     description:
-      "Bring the traceability chain into defensible reports, showing what was assessed, what supports the conclusion, and where remediation or governance action remains.",
+      "Show what was assessed, what supports the conclusion, and where remediation or governance action remains.",
   },
 ];
 
