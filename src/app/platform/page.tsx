@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CheckCircle2, Database, FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Database, FileText } from "lucide-react";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import {
@@ -8,6 +9,7 @@ import {
   TraceabilityFlow,
 } from "@/components/marketing/visuals";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   platformInteractionPatterns,
@@ -16,6 +18,7 @@ import {
   platformReports,
   workbenchSummaries,
 } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Platform",
@@ -106,6 +109,15 @@ export default function PlatformPage() {
                       </p>
                     </div>
                   </div>
+                  <Link
+                    href={`/workbenches/${section.slug}`}
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "mt-6 w-full justify-center rounded-md",
+                    )}
+                  >
+                    View practitioner workflow <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </CardContent>
               </Card>
             );

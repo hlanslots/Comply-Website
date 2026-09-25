@@ -752,6 +752,7 @@ export const platformSections = [
 
 export const workbenchSummaries = [
   {
+    slug: "comply-risk",
     title: "COMPLY-RISK",
     description:
       "Supports ISO-aligned risk assessments by connecting assets, vulnerabilities, threats, evaluations, risk treatment, ownership, and evidence context.",
@@ -762,6 +763,7 @@ export const workbenchSummaries = [
     icon: Scale,
   },
   {
+    slug: "comply-ucf",
     title: "COMPLY-UCF",
     description:
       "Creates a unified control framework for the client’s defined compliance scope by mapping obligations, framework controls, applicability, and local control intent.",
@@ -772,6 +774,7 @@ export const workbenchSummaries = [
     icon: Layers3,
   },
   {
+    slug: "comply-ssa",
     title: "COMPLY-SSA",
     description:
       "Supports security-stack assessments by connecting client context, engagement scope, frameworks, technologies, control coverage, and assessment findings.",
@@ -782,6 +785,7 @@ export const workbenchSummaries = [
     icon: Network,
   },
   {
+    slug: "comply-docs",
     title: "COMPLY-DOCS",
     description:
       "Provides a governed Compliance Evidence Repository for organizing documents and evidence artifacts, mapping them to controls, and managing review status.",
