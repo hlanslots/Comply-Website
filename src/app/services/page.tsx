@@ -125,7 +125,7 @@ export default function ServicesPage() {
       >
         <AuditReadinessJourney />
       </Section>
-      <Section eyebrow="Scope and independence" title="What COMPLY does—and does not do.">
+        <Section eyebrow="Scope and independence" title="What COMPLY does – and does not do.">
         <Card className="bg-card/80">
           <CardContent className="p-6 leading-7 text-muted-foreground lg:p-8">
             COMPLY supports readiness, governance, evidence, risk management, and internal

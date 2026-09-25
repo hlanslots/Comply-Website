@@ -36,7 +36,7 @@ export function WorkbenchGuidePage({ workbench }: { workbench: WorkbenchPage }) 
       <Section
         eyebrow="Representative practitioner workflow"
         title="How COMPLY practitioners use it during an engagement."
-        description="The Workbench supports the practitioner’s delivery workflow. The client-facing report, export, representative screenshot, selected view, or controlled access is defined by the engagement need—not assumed to be unrestricted portal access."
+        description="The Workbench supports the practitioner’s delivery workflow. The client-facing report, export, representative screenshot, selected view, or controlled access is defined by the engagement need – not assumed to be unrestricted portal access."
         className="bg-muted/45"
       >
         <div className="grid gap-4 md:grid-cols-2">

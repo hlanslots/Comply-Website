@@ -58,7 +58,7 @@ export default function AboutPage() {
                 The team combines years of experience helping organizations operate security
                 programs, prepare for assessments, evaluate controls, and explain compliance
                 outcomes to leadership. That perspective keeps the work grounded in what owners
-                can actually execute—not only what a framework says on paper.
+                can actually execute – not only what a framework says on paper.
               </p>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Engagements are designed to leave clients with clearer decisions, accountable

@@ -84,7 +84,7 @@ export default function PlatformPage() {
                       )}
                     </div>
                     <p className="mt-3 text-[10px] leading-4 text-muted-foreground">
-                      Illustrative screen treatment—not live portal access.
+                      Illustrative screen treatment – not live portal access.
                     </p>
                   </div>
                   <h2 className="text-xl font-semibold">{section.title}</h2>
