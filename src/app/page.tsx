@@ -65,12 +65,12 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="site-shell flex flex-col items-start gap-4 py-5 sm:flex-row sm:justify-start sm:py-6">
+      <div className="site-shell flex flex-col items-stretch gap-3 py-5 sm:py-6 lg:flex-row lg:items-center">
         <Link
           href="/contact"
           className={cn(
             buttonVariants({ size: "lg" }),
-            "w-full justify-center rounded-md sm:w-56",
+            "h-auto min-h-9 w-full justify-center rounded-md px-4 py-2 text-center whitespace-normal lg:w-auto",
           )}
         >
           Book a Compliance Clarity Conversation <ArrowRight className="ml-2 h-4 w-4" />
@@ -79,7 +79,7 @@ export default function Home() {
           href="/platform#workbenches"
           className={cn(
             buttonVariants({ variant: "outline", size: "lg" }),
-            "w-full justify-center rounded-md border-white/25 bg-white/8 text-white hover:bg-white/15 hover:text-white sm:w-56",
+            "h-auto min-h-9 w-full justify-center rounded-md border-white/25 bg-white/8 px-4 py-2 text-center whitespace-normal text-white hover:bg-white/15 hover:text-white lg:w-auto",
           )}
         >
           See representative COMPLY Workbench screenshots <ArrowRight className="ml-2 h-4 w-4" />
