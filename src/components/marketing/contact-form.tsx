@@ -47,7 +47,7 @@ export function ContactForm({ source = "comply" }: ContactFormProps) {
 
     form.reset();
     setState("sent");
-    setStatusMessage("Your message has been sent. We will be in touch soon.");
+    setStatusMessage("Your message has been sent. We will review the details and prepare the next step.");
   }
 
   return (

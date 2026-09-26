@@ -67,6 +67,11 @@ export default function ContactPage() {
           <Card className="bg-card/80">
             <CardContent className="p-6">
               <ContactForm />
+              <p className="mt-5 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                After you submit, we review the request for fit and use the details you share to
+                prepare a focused first conversation. If more context is needed, we will clarify
+                that before recommending a paid diagnostic.
+              </p>
             </CardContent>
           </Card>
         </div>
