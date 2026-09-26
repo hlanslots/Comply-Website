@@ -36,7 +36,8 @@ export function Section({
           {eyebrow ? <Badge className="mb-4 rounded-md">{eyebrow}</Badge> : null}
           <Heading
             className={cn(
-              "text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl",
+              "text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl",
+              !titleClassName && "text-balance",
               titleClassName,
             )}
           >
