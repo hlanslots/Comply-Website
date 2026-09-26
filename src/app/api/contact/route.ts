@@ -10,8 +10,16 @@ type ContactPayload = {
   title?: unknown;
   email?: unknown;
   phone?: unknown;
+  companySize?: unknown;
+  industry?: unknown;
+  complianceNeed?: unknown;
+  deadline?: unknown;
+  trigger?: unknown;
+  currentState?: unknown;
+  desiredOutcome?: unknown;
   message?: unknown;
   website?: unknown;
+  source?: unknown;
 };
 
 function asText(value: unknown) {
@@ -31,15 +39,15 @@ function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function getSourceLabel(source: string) {
+  return source.toLowerCase() === "ansec" ? "ANSEC" : "COMPLY";
+}
+
 export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
-
-  if (!resendApiKey) {
-    return Response.json(
-      { error: "Email delivery is not configured." },
-      { status: 500 },
-    );
-  }
+  const mockSend =
+    process.env.NODE_ENV !== "production" &&
+    process.env.CONTACT_FORM_MOCK_SEND === "true";
 
   let payload: ContactPayload;
 
@@ -58,9 +66,17 @@ export async function POST(request: Request) {
   const title = asText(payload.title);
   const email = asText(payload.email);
   const phone = asText(payload.phone);
+  const companySize = asText(payload.companySize);
+  const industry = asText(payload.industry);
+  const complianceNeed = asText(payload.complianceNeed);
+  const deadline = asText(payload.deadline);
+  const trigger = asText(payload.trigger);
+  const currentState = asText(payload.currentState);
+  const desiredOutcome = asText(payload.desiredOutcome);
   const message = asText(payload.message);
+  const sourceLabel = getSourceLabel(asText(payload.source));
 
-  if (!name || !company || !email || !message) {
+  if (!name || !company || !email) {
     return Response.json(
       { error: "Please complete the required fields." },
       { status: 400 },
@@ -75,17 +91,25 @@ export async function POST(request: Request) {
   }
 
   const fields = [
+    ["Origin", sourceLabel],
     ["Name", name],
     ["Company", company],
     ["Title", title || "Not provided"],
     ["Email", email],
     ["Phone", phone || "Not provided"],
-    ["Message", message],
+    ["Company size", companySize || "Not provided"],
+    ["Industry", industry || "Not provided"],
+    ["Framework or requirement", complianceNeed || "Not provided"],
+    ["Important deadline", deadline || "Not provided"],
+    ["What prompted this now", trigger || "Not provided"],
+    ["Current compliance state", currentState || "Not provided"],
+    ["Desired outcome", desiredOutcome || "Not provided"],
+    ["Additional message", message || "Not provided"],
   ];
 
   const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n\n");
   const html = `
-    <h1>New COMPLY consultation request</h1>
+    <h1>New ${sourceLabel} conversation request</h1>
     ${fields
       .map(
         ([label, value]) => `
@@ -98,12 +122,29 @@ export async function POST(request: Request) {
       .join("")}
   `;
 
+  if (mockSend) {
+    console.info("Mocked COMPLY contact email", {
+      to: recipientEmail,
+      replyTo: email,
+      subject: `[${sourceLabel}] conversation request from ${name}`,
+    });
+
+    return Response.json({ ok: true, mocked: true });
+  }
+
+  if (!resendApiKey) {
+    return Response.json(
+      { error: "Email delivery is not configured." },
+      { status: 500 },
+    );
+  }
+
   const resend = new Resend(resendApiKey);
   const { error } = await resend.emails.send({
     from: senderEmail,
     to: recipientEmail,
     replyTo: email,
-    subject: `COMPLY consultation request from ${name}`,
+    subject: `[${sourceLabel}] conversation request from ${name}`,
     text,
     html,
   });

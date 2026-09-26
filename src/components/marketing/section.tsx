@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -13,21 +14,35 @@ export function Section({
   description,
   children,
   className,
+  headingLevel = "h2",
+  id,
+  titleClassName,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   children?: ReactNode;
   className?: string;
+  headingLevel?: "h1" | "h2";
+  id?: string;
+  titleClassName?: string;
 }) {
+  const Heading = headingLevel;
+
   return (
-    <section className={cn("py-14 sm:py-16 lg:py-24", className)}>
+    <section id={id} className={cn("py-14 sm:py-16 lg:py-24", className)}>
       <div className="site-shell">
         <div className="mb-10 max-w-3xl">
           {eyebrow ? <Badge className="mb-4 rounded-md">{eyebrow}</Badge> : null}
-          <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
+          <Heading
+            className={cn(
+              "text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl",
+              !titleClassName && "text-balance",
+              titleClassName,
+            )}
+          >
             {title}
-          </h2>
+          </Heading>
           {description ? (
             <p className="mt-4 text-lg leading-7 text-muted-foreground">{description}</p>
           ) : null}
@@ -63,13 +78,15 @@ export function PageHero({
           </p>
         </div>
         <div className="hidden justify-end lg:flex">
-          <Image
-            src="/logo-transparent.png"
-            alt="COMPLY logo"
-            width={1024}
-            height={1024}
-            className="h-56 w-56 object-contain drop-shadow-2xl"
-          />
+          <Link href="/" aria-label="C.O.M.P.L.Y. home">
+            <Image
+              src="/comply-logo.png"
+              alt="COMPLY logo"
+              width={1024}
+              height={1024}
+              className="h-56 w-56 object-contain drop-shadow-2xl"
+            />
+          </Link>
         </div>
       </div>
     </section>

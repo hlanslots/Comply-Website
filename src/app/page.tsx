@@ -2,20 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-import { FadeIn, Stagger, StaggerItem } from "@/components/marketing/motion";
+import { FadeIn } from "@/components/marketing/motion";
 import { heroHeadlineClass, Section } from "@/components/marketing/section";
 import {
-  FrameworkMatrix,
+  FrameworkGraph,
   GovernanceModel,
   TraceabilityFlow,
 } from "@/components/marketing/visuals";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  challenges,
   outcomes,
   pillars,
+  prioritySegments,
   supportingSubheads,
+  brandPromise,
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -24,17 +25,18 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden border-b border-border/70">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,oklch(0.11_0.03_245),oklch(0.21_0.035_245)_45%,transparent_80%),radial-gradient(circle_at_82%_22%,oklch(0.66_0.16_178_/_0.26),transparent_33%)]" />
-        <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.28fr_0.72fr] lg:items-start lg:py-16 lg:pt-40">
+        <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:grid-cols-[1fr_18rem] lg:items-center lg:py-16 lg:pt-40 lg:pb-8">
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
-              Security compliance solutions built for operational reality.
+              Expert-led security compliance for small and mid-size enterprises at every stage, under customer, audit, or regulatory pressure.
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-7 text-white/72 sm:text-xl">
+            <p className="mt-5 max-w-3xl text-lg leading-7 text-white/72">
               <span className="block">
-                COMPLY brings governance, controls, risk, evidence, and audit readiness into a
-                cohesive operating model, by transforming compliance from documentation exercises
-                into verifiable operational reality through governance, evidence management,
-                traceability, and continuous compliance oversight.
+                COMPLY helps lean teams assess risk, unify controls, organize evidence, and prepare
+                for ISO 27001, ISO 42001, SOC 2, PCI DSS, NIST, DORA, GDPR, and related requirements.
+                Our practitioners use purpose-built Workbenches to structure the engagement. Depending on
+                your needs, you may receive representative screenshots, selected views, reports, exports,
+                or controlled access, alongside clear findings and a prioritized roadmap.
               </span>
               <span className="mt-10 block text-sm font-semibold leading-6 text-white/90 sm:mt-12 sm:text-base lg:mt-16 lg:whitespace-nowrap lg:text-[clamp(0.7rem,1.18vw,1rem)]">
                 <span className="text-primary">C</span>onsolidate requirements.{" "}
@@ -45,60 +47,90 @@ export default function Home() {
                 <span className="text-primary">Y</span>ield lasting results.
               </span>
             </p>
-            <div className="mt-12 flex flex-col gap-3 sm:mt-16 sm:flex-row lg:mt-24">
-              <Link
-                href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
-              >
-                Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
           </FadeIn>
 
           <FadeIn delay={0.12}>
-            <div className="flex flex-col items-center justify-center lg:items-end lg:justify-end">
-              <Image
-                src="/logo-transparent.png"
-                alt="COMPLY logo"
-                width={1024}
-                height={1024}
-                priority
-                className="h-auto w-full max-w-xs object-contain drop-shadow-2xl sm:max-w-sm lg:max-w-md"
-              />
+            <div className="flex flex-col items-center justify-center lg:items-end lg:justify-end lg:pr-4">
+              <Link href="/" aria-label="C.O.M.P.L.Y. home">
+                <Image
+                  src="/comply-logo.png"
+                  alt="COMPLY logo"
+                  width={1024}
+                  height={1024}
+                  priority
+                  className="h-auto w-full max-w-[7.84rem] object-contain drop-shadow-2xl sm:max-w-[9.408rem] lg:h-[11.2rem] lg:w-[11.2rem] lg:max-w-none"
+                />
+              </Link>
             </div>
           </FadeIn>
         </div>
       </section>
 
+      <div className="site-shell flex flex-col items-stretch gap-3 py-5 sm:py-6 lg:flex-row lg:items-center">
+        <Link
+          href="/contact"
+          className={cn(
+            buttonVariants({ size: "lg" }),
+            "h-auto min-h-9 w-full justify-center rounded-md px-4 py-2 text-center whitespace-normal lg:w-auto",
+          )}
+        >
+          Book a Compliance Clarity Conversation <ArrowRight className="ml-2 h-4 w-4" />
+        </Link>
+        <Link
+          href="/platform#workbenches"
+          className={cn(
+            buttonVariants({ variant: "outline", size: "lg" }),
+            "h-auto min-h-9 w-full justify-center rounded-md border-white/25 bg-white/8 px-4 py-2 text-center whitespace-normal text-white hover:bg-white/15 hover:text-white lg:w-auto",
+          )}
+        >
+          See representative COMPLY Workbench screenshots <ArrowRight className="ml-2 h-4 w-4" />
+        </Link>
+      </div>
+
       <Section
-        eyebrow="Customer challenges"
-        title="Compliance programs fail when proof and operation drift apart."
-        description="COMPLY addresses the gaps that prevent organizations from turning documented intent into audit-defensible operational reality."
+        eyebrow="Who COMPLY helps"
+        title="Practical compliance support for small and mid-size companies at every stage of maturity."
+        description="Whether you are building a program, strengthening an established one, or responding to a new requirement, COMPLY provides credible progress without requiring a large in-house compliance function."
       >
-        <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {challenges.map((challenge, index) => (
-            <StaggerItem key={challenge.title}>
-              <Card className="h-full bg-card/80">
-                <CardContent className="flex h-full gap-4 p-6">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 font-mono text-sm font-semibold text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold leading-7">{challenge.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      {challenge.description}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+          {prioritySegments.map((segment) => {
+            const Icon = segment.icon;
+            return (
+              <Card key={segment.title} className="h-full bg-card/80">
+                <CardContent className="flex h-full flex-col p-5">
+                  <Icon className="mb-5 h-7 w-7 text-primary" />
+                  <h3 className="font-semibold leading-6">{segment.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {segment.description}
+                  </p>
+                  <div className="mt-auto border-t border-border pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                      Typical trigger
                     </p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {segment.trigger}
+                    </p>
+                    <Link
+                      href="/services#start-here"
+                      className={cn(
+                        buttonVariants({ variant: "outline", size: "sm" }),
+                        "mt-4 h-auto min-h-7 w-full justify-center rounded-md px-2 py-1 text-center text-xs leading-4 whitespace-normal",
+                      )}
+                    >
+                      <span className="min-w-0 break-words text-center">{segment.firstOffer}</span>
+                      <ArrowRight className="ml-1 h-3.5 w-3.5 shrink-0" />
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
-            </StaggerItem>
-          ))}
-        </Stagger>
+            );
+          })}
+        </div>
       </Section>
 
       <Section
         eyebrow="COMPLY solution"
-        title="One operating model for achieving, demonstrating, and sustaining compliance."
+        title={brandPromise}
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {pillars.map((pillar) => {
@@ -128,21 +160,27 @@ export default function Home() {
         className="bg-muted/45"
       >
         <div className="grid gap-4 md:grid-cols-2">
-          {supportingSubheads.map((subhead, index) => (
-            <Card key={subhead.title} className="h-full bg-card/80">
-              <CardContent className="flex h-full gap-4 p-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 font-mono text-xs font-semibold text-primary">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="font-semibold leading-7">{subhead.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {subhead.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {supportingSubheads.map((subhead) => {
+            const Icon = subhead.icon;
+            return (
+              <Card key={subhead.title} className="h-full bg-card/80">
+                <CardContent className="flex h-full gap-4 p-6">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary"
+                  >
+                    <Icon className="h-5 w-5" strokeWidth={1.8} />
+                  </span>
+                  <div>
+                    <h3 className="font-semibold leading-7">{subhead.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {subhead.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </Section>
 
@@ -151,13 +189,16 @@ export default function Home() {
         title="One Compliance Program. Multiple Frameworks."
         description="A unified control structure creates reusable evidence across security, privacy, resilience, and governance obligations."
       >
-        <FrameworkMatrix />
+        <div className="max-w-3xl">
+          <FrameworkGraph />
+        </div>
       </Section>
 
       <Section
         eyebrow="Evidence traceability"
         title="Requirement -> Control -> Evidence -> Audit Conclusion"
         description="Every conclusion is tied to governance ownership, control operation, and validated evidence."
+        titleClassName="whitespace-nowrap"
       >
         <TraceabilityFlow />
       </Section>

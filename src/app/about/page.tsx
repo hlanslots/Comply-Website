@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, RefreshCw, Target } from "lucide-react";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { brandDifferentiators } from "@/lib/site-data";
+import { brandDifferentiators, teamProfiles } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -23,26 +23,154 @@ export default function AboutPage() {
         description="COMPLY exists to help organizations achieve and demonstrate security compliance with clarity, accountability, and defensible outcomes."
         className="py-14 sm:py-18"
       />
-      <Section title="Our Mission" className="pt-3 pb-8 sm:pt-4 sm:pb-10">
+      <Section title="Our Mission" className="pt-2 pb-8 sm:pt-3 sm:pb-10 lg:pt-8">
         <Card className="bg-card/80">
           <CardContent className="p-5 sm:p-6 lg:p-8">
             <p className="max-w-3xl text-xl font-semibold leading-8 sm:text-2xl sm:leading-10">
               Help organizations achieve and demonstrate security compliance.
             </p>
             <p className="mt-5 max-w-4xl text-lg leading-7 text-muted-foreground">
-              COMPLY is a framework-agnostic compliance architecture that turns
-              compliance from documentation into verifiable operational truth through
-              unified controls, UCC (Universal Control Criteria), and evidence-driven
-              artifacts.
+              COMPLY helps small and mid-size organizations turn compliance pressure into
+              clear decisions, accountable action, and evidence that customers, auditors,
+              and leadership can follow.
             </p>
             <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
-              For IT, security, compliance, and audit teams working across many
-              frameworks, COMPLY provides a unified, defensible, auditable mechanism
-              to show controls are designed, implemented, operating, and evidenced
-              with end-to-end traceability from requirement to audit conclusion.
+              The model connects requirements, controls, evidence, and governance so teams
+              can build, explain, and sustain a compliance program without losing sight of
+              how work operates in practice.
+            </p>
+            <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
+              Underneath that practical delivery model are unified controls, UCC (Universal
+              Control Criteria), and evidence-driven artifacts. Together they provide a
+              framework-agnostic way to show that controls are designed, implemented,
+              operating, and evidenced with traceability from requirement to audit conclusion.
             </p>
           </CardContent>
         </Card>
+      </Section>
+      <Section
+        eyebrow="Why trust COMPLY"
+        title="Client-side experience, assessment discipline, and practical delivery."
+        description="COMPLY is closely associated with AnsecGroup and is shaped by people who understand the pressure from both sides of a security compliance engagement."
+        className="bg-muted/45 pt-8 sm:pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
+          <Card className="bg-card/80">
+            <CardContent className="p-6 lg:p-8">
+              <h2 className="text-xl font-semibold sm:text-2xl">
+                Experience from both sides of the engagement
+              </h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                COMPLY combines client-side operating experience, assessment discipline, and
+                leadership perspective. The team has helped organizations run security programs,
+                prepare for and evaluate controls, and explain compliance outcomes to decision-makers.
+                That keeps the work grounded in what owners can execute – not only what a framework
+                says on paper.
+              </p>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Engagements are designed to leave clients with clearer decisions, accountable
+                owners, usable evidence, and a roadmap that remains useful after the report is
+                delivered.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-card/80">
+            <CardContent className="flex h-full flex-col p-6 lg:p-8">
+              <h2 className="text-xl font-semibold sm:text-2xl">Learn more about the team</h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Explore the broader AnsecGroup team and its security, privacy, risk, and compliance
+                experience before you start a conversation with COMPLY.
+              </p>
+              <div className="mt-auto pt-6">
+                <a
+                  href="https://www.ansecgroup.com/team"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-md")}
+                >
+                  Visit AnsecGroup <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {teamProfiles.map((profile) => (
+            <Card key={profile.name} className="h-full bg-card/80">
+              <CardContent className="p-6 lg:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                  Practitioner profile
+                </p>
+                <h2 className="mt-3 text-xl font-semibold sm:text-2xl">{profile.name}</h2>
+                <p className="mt-2 text-sm font-semibold text-foreground">{profile.role}</p>
+                <p className="mt-4 leading-7 text-muted-foreground">{profile.summary}</p>
+                <p className="mt-4 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                  <span className="font-semibold text-foreground">Client benefit: </span>
+                  {profile.clientBenefit}
+                </p>
+                <a
+                  href={profile.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "mt-5 rounded-md",
+                  )}
+                >
+                  View LinkedIn profile
+                </a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+      <Section
+        eyebrow="After the assessment"
+        title="What happens after the assessment report is delivered?"
+        description="The report is a decision point, not the finish line. COMPLY helps translate findings into owned actions, usable evidence, and a review rhythm for the next stage."
+        className="pt-8 sm:pt-10"
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              title: "Review the findings",
+              description:
+                "Walk through the evidence, gaps, risk context, and implications with the people who own the work.",
+              icon: ClipboardCheck,
+            },
+            {
+              title: "Prioritize the roadmap",
+              description:
+                "Turn gaps into practical actions with clear ownership, sequencing, and evidence expectations.",
+              icon: Target,
+            },
+            {
+              title: "Keep progress visible",
+              description:
+                "Use recurring reviews, governance checkpoints, and management reporting to keep the program current.",
+              icon: RefreshCw,
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card key={item.title} className="h-full bg-card/80">
+                <CardContent className="p-6">
+                  <Icon className="mb-5 h-7 w-7 text-primary" />
+                  <h2 className="text-xl font-semibold">{item.title}</h2>
+                  <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link
+            href="/contact"
+            className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
+          >
+            Discuss your next step <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
       </Section>
       <Section title="Our Approach" className="bg-muted/45 pt-6 sm:pt-8">
         <div className="grid gap-4 md:grid-cols-3">
@@ -72,7 +200,7 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-      <Section title="Why COMPLY">
+      <Section title="The COMPLY model behind the work">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {brandDifferentiators.map((item) => {
             const Icon = item.icon;

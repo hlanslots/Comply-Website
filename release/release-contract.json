@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "3.0",
+  "provider": {
+    "name": "vercel",
+    "targets": {
+      "preview": "preview",
+      "production": "production"
+    },
+    "commands": {
+      "preflight": "./release/provider-preflight.sh",
+      "deployPreview": "./release/deploy-preview.sh",
+      "inspect": "./release/inspect-deployment.sh",
+      "logs": "./release/deployment-logs.sh",
+      "releaseProduction": "./release/release-production.sh",
+      "waitReady": "./release/wait-ready.sh",
+      "rollback": "./release/rollback.sh"
+    }
+  },
+  "production": {
+    "url": "https://mycomply.ai",
+    "target": "production"
+  },
+  "preview": {
+    "originMode": "direct",
+    "domain": null,
+    "buildSource": "preview",
+    "promotionMode": "rebuild-production",
+    "dataStrategy": "shared-readonly",
+    "auth": {
+      "mode": "development-instance",
+      "testIdentityRef": "not-applicable-public-marketing-site",
+      "organizationRef": "not-applicable-public-marketing-site"
+    },
+    "requiredScenario": "Load the public Preview routes, verify the new positioning and Workbench explanation, inspect the qualification form, and confirm Production remains unchanged. Do not submit an email form from Preview unless an explicitly safe test mailbox is configured."
+  },
+  "commands": {
+    "install": "npm ci",
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck",
+    "test": "npm test",
+    "build": "npm run build"
+  },
+  "version": {
+    "source": "package.json",
+    "lockfiles": ["package-lock.json"],
+    "tagPrefix": "v"
+  },
+  "checks": {
+    "requiredRoutes": ["/", "/services", "/platform", "/contact", "/resources", "/about"],
+    "environmentNames": {
+      "preview": [],
+      "production": []
+    },
+    "artifactMarkers": {
+      "previewRequired": ["Expert-led security compliance"],
+      "previewForbidden": ["production-api"],
+      "productionRequired": ["COMPLY"],
+      "productionForbidden": ["preview-api"]
+    }
+  },
+  "dependencies": [],
+  "preservation": {
+    "required": true,
+    "ancestry": {
+      "required": true,
+      "baselineReference": "last verified Production application SHA from the release manifest"
+    },
+    "checks": [
+      {
+        "name": "critical-user-flows",
+        "command": "npm run test:release-regression",
+        "evidencePath": "artifacts/release/critical-user-flows.json"
+      }
+    ]
+  },
+  "performance": {
+    "required": true,
+    "checks": [
+      {
+        "name": "cold-app-load",
+        "command": "npm run perf:cold-app-load",
+        "thresholdMs": 3000,
+        "evidencePath": "artifacts/performance/cold-app-load.json"
+      },
+      {
+        "name": "changed-flow",
+        "command": "npm run perf:changed-flow",
+        "thresholdMs": 3000,
+        "evidencePath": "artifacts/performance/changed-flow.json"
+      }
+    ]
+  },
+  "rollback": {
+    "required": true
+  }
+}

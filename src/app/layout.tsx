@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { SiteFooter } from "@/components/marketing/site-footer";
-import { SiteHeader } from "@/components/marketing/site-header";
+import { SiteChrome } from "@/components/marketing/site-chrome";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { keywordDescription } from "@/lib/site-data";
+import { brandPromise, keywordDescription } from "@/lib/site-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
     "COMPLY helps organizations achieve and demonstrate security compliance while reducing audit effort, improving governance, and creating defensible compliance outcomes.",
   keywords: keywordDescription.split(", "),
   openGraph: {
-    title: "COMPLY | Achieve Compliance. Demonstrate Compliance. Leverage Your Edge.",
+    title: `COMPLY | ${brandPromise}`,
     description:
       "Evidence-driven compliance management, risk governance, audit readiness, and continuous compliance oversight.",
     url: "https://mycomply.ai",
@@ -59,9 +58,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>
