@@ -16,6 +16,7 @@ export function Section({
   className,
   headingLevel = "h2",
   id,
+  titleClassName,
 }: {
   eyebrow?: string;
   title: string;
@@ -24,6 +25,7 @@ export function Section({
   className?: string;
   headingLevel?: "h1" | "h2";
   id?: string;
+  titleClassName?: string;
 }) {
   const Heading = headingLevel;
 
@@ -32,7 +34,12 @@ export function Section({
       <div className="site-shell">
         <div className="mb-10 max-w-3xl">
           {eyebrow ? <Badge className="mb-4 rounded-md">{eyebrow}</Badge> : null}
-          <Heading className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
+          <Heading
+            className={cn(
+              "text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl",
+              titleClassName,
+            )}
+          >
             {title}
           </Heading>
           {description ? (
