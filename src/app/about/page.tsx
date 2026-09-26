@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, RefreshCw, Target } from "lucide-react";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import { buttonVariants } from "@/components/ui/button";
@@ -115,6 +115,54 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </Section>
+      <Section
+        eyebrow="After the assessment"
+        title="What happens after the assessment report is delivered?"
+        description="The report is a decision point, not the finish line. COMPLY helps translate findings into owned actions, usable evidence, and a review rhythm for the next stage."
+        className="pt-8 sm:pt-10"
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              title: "Review the findings",
+              description:
+                "Walk through the evidence, gaps, risk context, and implications with the people who own the work.",
+              icon: ClipboardCheck,
+            },
+            {
+              title: "Prioritize the roadmap",
+              description:
+                "Turn gaps into practical actions with clear ownership, sequencing, and evidence expectations.",
+              icon: Target,
+            },
+            {
+              title: "Keep progress visible",
+              description:
+                "Use recurring reviews, governance checkpoints, and management reporting to keep the program current.",
+              icon: RefreshCw,
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card key={item.title} className="h-full bg-card/80">
+                <CardContent className="p-6">
+                  <Icon className="mb-5 h-7 w-7 text-primary" />
+                  <h2 className="text-xl font-semibold">{item.title}</h2>
+                  <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link
+            href="/contact"
+            className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
+          >
+            Discuss your next step <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </Section>
       <Section title="Our Approach" className="bg-muted/45 pt-6 sm:pt-8">
