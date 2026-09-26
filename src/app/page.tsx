@@ -50,7 +50,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.12}>
-            <div className="flex flex-col items-center justify-center lg:items-end lg:justify-end">
+            <div className="flex flex-col items-center justify-center lg:items-end lg:justify-end lg:pr-4">
               <Link href="/" aria-label="C.O.M.P.L.Y. home">
                 <Image
                   src="/comply-logo.png"
