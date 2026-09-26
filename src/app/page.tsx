@@ -58,7 +58,7 @@ export default function Home() {
                   width={1024}
                   height={1024}
                   priority
-                  className="h-auto w-full max-w-[9.8rem] object-contain drop-shadow-2xl sm:max-w-[11.76rem] lg:h-56 lg:w-56 lg:max-w-none"
+                  className="h-auto w-full max-w-[7.84rem] object-contain drop-shadow-2xl sm:max-w-[9.408rem] lg:h-[11.2rem] lg:w-[11.2rem] lg:max-w-none"
                 />
               </Link>
             </div>
