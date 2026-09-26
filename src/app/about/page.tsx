@@ -45,7 +45,7 @@ export default function AboutPage() {
         </Card>
       </Section>
       <Section
-        eyebrow="People and perspective"
+        eyebrow="Why trust COMPLY"
         title="Client-side experience, assessment discipline, and practical delivery."
         description="COMPLY is closely associated with AnsecGroup and is shaped by people who understand the pressure from both sides of a security compliance engagement."
         className="bg-muted/45 pt-8 sm:pt-10"
