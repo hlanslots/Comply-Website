@@ -30,16 +30,20 @@ export default function AboutPage() {
               Help organizations achieve and demonstrate security compliance.
             </p>
             <p className="mt-5 max-w-4xl text-lg leading-7 text-muted-foreground">
-              COMPLY is a framework-agnostic compliance architecture that turns
-              compliance from documentation into verifiable operational truth through
-              unified controls, UCC (Universal Control Criteria), and evidence-driven
-              artifacts.
+              COMPLY helps small and mid-size organizations turn compliance pressure into
+              clear decisions, accountable action, and evidence that customers, auditors,
+              and leadership can follow.
             </p>
             <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
-              For IT, security, compliance, and audit teams working across many
-              frameworks, COMPLY provides a unified, defensible, auditable mechanism
-              to show controls are designed, implemented, operating, and evidenced
-              with end-to-end traceability from requirement to audit conclusion.
+              The model connects requirements, controls, evidence, and governance so teams
+              can build, explain, and sustain a compliance program without losing sight of
+              how work operates in practice.
+            </p>
+            <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
+              Underneath that practical delivery model are unified controls, UCC (Universal
+              Control Criteria), and evidence-driven artifacts. Together they provide a
+              framework-agnostic way to show that controls are designed, implemented,
+              operating, and evidenced with traceability from requirement to audit conclusion.
             </p>
           </CardContent>
         </Card>
@@ -53,12 +57,15 @@ export default function AboutPage() {
         <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
           <Card className="bg-card/80">
             <CardContent className="p-6 lg:p-8">
-              <h2 className="text-xl font-semibold sm:text-2xl">A practitioner-led approach</h2>
+              <h2 className="text-xl font-semibold sm:text-2xl">
+                Experience from both sides of the engagement
+              </h2>
               <p className="mt-4 leading-7 text-muted-foreground">
-                The team combines years of experience helping organizations operate security
-                programs, prepare for assessments, evaluate controls, and explain compliance
-                outcomes to leadership. That perspective keeps the work grounded in what owners
-                can actually execute – not only what a framework says on paper.
+                COMPLY combines client-side operating experience, assessment discipline, and
+                leadership perspective. The team has helped organizations run security programs,
+                prepare for and evaluate controls, and explain compliance outcomes to decision-makers.
+                That keeps the work grounded in what owners can execute – not only what a framework
+                says on paper.
               </p>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Engagements are designed to leave clients with clearer decisions, accountable
@@ -193,7 +200,7 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-      <Section title="Why COMPLY">
+      <Section title="The COMPLY model behind the work">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {brandDifferentiators.map((item) => {
             const Icon = item.icon;
