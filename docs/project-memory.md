@@ -32,3 +32,11 @@ Preview READY: https://comply-website-8v2mw9dw2-hans-lanslots-projects.vercel.ap
 
 ## 2026-10-22 en dash typography
 Changed the home page headline separator from an em dash to an en dash, preserving the separate helping-clause line. Files: src/app/page.tsx and this memory. Verification: focused ESLint, Vercel optimized build/typecheck, and deployed browser text/line-break check passed; no browser errors reported. Preview READY: https://comply-website-5q6a5is08-hans-lanslots-projects.vercel.app (dpl_HqXNr6iEJTaSKaCLYeNuhjG1mKLK), source 5ff341b. Next step: user review. Production unchanged.
+
+## 2026-10-22 Production release preparation
+User requested a space before the en dash, an updated Preview, and Production promotion with rollback. The request authorizes completing the release after verification.
+Current Production baseline and rollback: e476c2973e42f25b6cb7f562cacc096335441c9a, dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX, https://comply-website-ofkzueaqp-hans-lanslots-projects.vercel.app. Verified live through Vercel; no aliases changed.
+The current Preview source descends from that baseline. The pending release includes existing Preview marketing content, framework/workbench/resource pages, qualification form, and the requested headline refinements, rather than only punctuation relative to Production.
+Preflight repair: main now requires strict verify CI and pull requests, including admins; force pushes/deletions disabled. No external reviewer count added. Release adapter now separates Production build/deploy with --skip-domain from explicit promotion, allowing canonical traffic to stay on the rollback deployment until checks pass. Required environment names are recorded in the release contract.
+The bundled parity helper expects a legacy root schema while this contract is schema 3.0; provide it a generated, name-only normalization of checks.environmentNames/artifactMarkers without altering its checks.
+Next step: implement spacing, freeze candidate, verify Preview, prepare and test the Production artifact, then promote and confirm rollback remains available.

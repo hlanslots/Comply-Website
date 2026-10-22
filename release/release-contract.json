@@ -42,20 +42,47 @@
   },
   "version": {
     "source": "package.json",
-    "lockfiles": ["package-lock.json"],
+    "lockfiles": [
+      "package-lock.json"
+    ],
     "tagPrefix": "v"
   },
   "checks": {
-    "requiredRoutes": ["/", "/services", "/platform", "/contact", "/resources", "/about"],
+    "requiredRoutes": [
+      "/",
+      "/services",
+      "/platform",
+      "/contact",
+      "/resources",
+      "/about"
+    ],
     "environmentNames": {
-      "preview": [],
-      "production": []
+      "preview": [
+        "CONTACT_FROM_EMAIL",
+        "RESEND_API_KEY"
+      ],
+      "production": [
+        "CONTACT_FROM_EMAIL",
+        "CONTACT_TO_EMAIL",
+        "RESEND_API_KEY",
+        "NEWSLETTER_CONFIRMATION_SECRET",
+        "NEWSLETTER_SEGMENT_ID",
+        "NEWSLETTER_FROM_EMAIL"
+      ]
     },
     "artifactMarkers": {
-      "previewRequired": ["Expert-led security compliance"],
-      "previewForbidden": ["production-api"],
-      "productionRequired": ["COMPLY"],
-      "productionForbidden": ["preview-api"]
+      "previewRequired": [
+        "Expert-led security compliance"
+      ],
+      "previewForbidden": [
+        "production-api"
+      ],
+      "productionRequired": [
+        "COMPLY"
+      ],
+      "productionForbidden": [
+        "preview-api"
+      ]
     }
   },
   "dependencies": [],
