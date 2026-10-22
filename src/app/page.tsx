@@ -28,7 +28,12 @@ export default function Home() {
         <div className="site-shell grid min-h-0 items-center gap-10 py-12 sm:py-14 lg:grid-cols-[1fr_18rem] lg:items-center lg:py-16 lg:pt-40 lg:pb-8">
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
-              Expert-led security compliance for small and mid-size enterprises at every stage, under customer, audit, or regulatory pressure.
+              <span className="block">
+                Expert-led security compliance for organizations across industries and stages of maturity–
+              </span>
+              <span className="block">
+                helping you navigate customer, audit, or regulatory requirements.
+              </span>
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-7 text-white/72">
               <span className="block">
