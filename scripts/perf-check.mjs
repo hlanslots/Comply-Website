@@ -18,7 +18,7 @@ let status = "passed";
 let error = null;
 
 try {
-  const response = await fetch(url, { redirect: "follow" });
+  const response = await fetch(url, { redirect: "follow", headers: JSON.parse(process.env.RELEASE_REQUEST_HEADERS_JSON ?? "{}") });
   if (!response.ok) {
     status = "failed";
     error = `HTTP ${response.status}`;

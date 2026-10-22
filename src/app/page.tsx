@@ -29,7 +29,7 @@ export default function Home() {
           <FadeIn>
             <h1 className={cn(heroHeadlineClass, "text-white")}>
               <span className="block">
-                Expert-led security compliance for organizations across industries and stages of maturity–
+                Expert-led security compliance for organizations across industries and stages of maturity –
               </span>
               <span className="block">
                 helping you navigate customer, audit, or regulatory requirements.
