@@ -22,3 +22,10 @@ Verification: original Preview headline and Production ancestry confirmed; npm c
 Deployment: new Preview READY at https://comply-website-1m9img98h-hans-lanslots-projects.vercel.app, ID dpl_82TypBLSvWQuT9XyrzPTbxkpd2iT, candidate dc630ba427d06ed585ff9be0605344ee6b111bfa, version 0.1.1. Exact deployed replacement headline verified via authenticated Vercel HTTP; original headline absent. Production unchanged. Draft PR: https://github.com/hlanslots/Comply-Website/pull/2.
 Next step: review the updated Preview. Production release requires separate full gate validation and approval. Local and deployed Preview browser visual checks passed. GitHub CI and Vercel checks passed.
 Risk: baseline deployment has no source SHA metadata; broader Preview content has not been approved for Production by this request.
+
+## 2026-10-22 headline split
+User approved wording: “Expert-led security compliance for organizations across industries and stages of maturity—helping you navigate customer, audit, or regulatory requirements.”
+The helping clause now starts on a separate line using two block spans within the existing H1; natural wrapping remains available on narrow screens. Existing headline typography is preserved.
+Source baseline: 67ce693 on codex/homepage-headline, matching the previously reviewed Preview source. Changes scoped to src/app/page.tsx and this memory file; unrelated logo-animation work in the primary checkout is untouched.
+Verification: typecheck and release regression passed; full lint/build and updated Preview verification pending. No data changes or form submissions are needed; configured Preview backend remains unchanged.
+Next step: verify desktop/mobile layout, deploy Preview, and record its immutable URL. Production remains unchanged.
