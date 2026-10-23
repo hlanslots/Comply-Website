@@ -1,6 +1,6 @@
 {
   "name": "comply-website",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "engines": {
     "node": "24.x"
@@ -10,7 +10,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "verify": "npm run lint && npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "test:release-regression": "node scripts/release-regression.mjs",
+    "perf:cold-app-load": "node scripts/perf-check.mjs --name cold-app-load --path /",
+    "perf:changed-flow": "node scripts/perf-check.mjs --name changed-flow --path /contact",
+    "verify": "npm run lint && npm run typecheck && npm run build",
     "deploy:prod": "vercel pull --yes --environment production && vercel build --prod && vercel deploy --prebuilt --prod"
   },
   "dependencies": {

@@ -56,7 +56,7 @@ export default function StoryBehindComplyPage() {
       <Section
         title="Built for the reality of modern security compliance."
         description="C.O.M.P.L.Y.™ was created for organizations that need to manage overlapping obligations without allowing compliance work to become fragmented, duplicative, or disconnected from operational reality."
-        className="pt-3 pb-8 sm:pt-4 sm:pb-10"
+        className="pt-2 pb-8 sm:pt-3 sm:pb-10 lg:pt-8"
       >
         <Card className="bg-card/80">
           <CardContent className="max-h-[30rem] space-y-5 overflow-y-auto p-5 pr-4 sm:max-h-[34rem] sm:p-6 sm:pr-5 lg:max-h-[38rem] lg:space-y-6 lg:p-8 lg:pr-6">
@@ -103,7 +103,7 @@ export default function StoryBehindComplyPage() {
           href="/contact"
           className={cn(buttonVariants({ size: "lg" }), "rounded-md")}
         >
-          Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
+          Schedule a Conversation <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </Section>
     </>

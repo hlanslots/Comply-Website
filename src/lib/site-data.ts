@@ -21,6 +21,7 @@ import {
 
 export const navItems = [
   { label: "Home", href: "/" },
+  { label: "Customer Challenges", href: "/customer-challenges" },
   { label: "Solutions", href: "/solutions" },
   { label: "Services", href: "/services" },
   { label: "How It Works", href: "/how-it-works" },
@@ -29,6 +30,8 @@ export const navItems = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+
+export const brandPromise = "Achieve compliance. Demonstrate it. Sustain it.";
 
 export const whitePaperDownload = {
   href: "/downloads/COMPLY_UCF_Conceptual_Methodology_White_Paper.pdf",
@@ -40,31 +43,37 @@ export const challenges = [
     title: "Controls are documented but not operational.",
     description:
       "Policies, procedures, and control statements may exist on paper, but they often do not reflect how work is actually performed. This creates a gap between documented intent and operational reality that weakens compliance defensibility.",
+    icon: ShieldCheck,
   },
   {
     title: "Evidence exists but does not demonstrate effectiveness.",
     description:
       "Organizations may collect screenshots, tickets, reports, and documents without proving that controls are designed correctly, implemented intentionally, and operating as expected over time.",
+    icon: FileCheck2,
   },
   {
     title: "Evidence cannot be reused across frameworks.",
     description:
       "When evidence is not mapped to common controls, criteria, and assurance dimensions, teams must answer the same audit questions repeatedly across ISO, SOC 2, NIST, PCI DSS, GDPR, DORA, and other obligations.",
+    icon: Layers3,
   },
   {
     title: "Audit preparation consumes excessive time and resources.",
     description:
       "Audit readiness becomes a recurring scramble when evidence requests, ownership, control mappings, and review status are not maintained continuously throughout the compliance cycle.",
+    icon: Gauge,
   },
   {
     title: "Compliance activities lack traceability and governance.",
     description:
       "Without clear links between requirements, controls, owners, evidence, reviews, risks, and audit conclusions, leadership cannot easily see what is working, what is missing, and what requires action.",
+    icon: GitBranch,
   },
   {
     title: "Artifacts are disconnected from control intent, design, implementation, and operation.",
     description:
       "Evidence artifacts lose audit value when they are not tied to the purpose of the control, the criteria being tested, and the expected proof of design, existence, and operating effectiveness.",
+    icon: Blocks,
   },
 ];
 
@@ -108,6 +117,88 @@ export const frameworks = [
   "NIS2",
 ];
 
+export const prioritySegments = [
+  {
+    title: "B2B SaaS and technology vendors",
+    description:
+      "Turn customer security questionnaires, procurement requests, and assurance commitments into a repeatable compliance program.",
+    trigger: "An enterprise customer asks for evidence or a completed security questionnaire.",
+    firstOffer: "Baseline and Gap Assessment",
+    icon: Network,
+  },
+  {
+    title: "Fintech, payments, and e-commerce",
+    description:
+      "Coordinate PCI DSS, privacy, resilience, and customer-control expectations without running separate evidence projects.",
+    trigger: "PCI DSS, customer-assurance, or payment-partner pressure is creating a deadline.",
+    firstOffer: "Baseline and Gap Assessment",
+    icon: Scale,
+  },
+  {
+    title: "Financial services and ICT suppliers",
+    description:
+      "Prepare for regulated customer expectations, DORA-related obligations, and evidence requests with clearer ownership and traceability.",
+    trigger: "DORA, ICT-risk, or third-party-risk expectations need an accountable response.",
+    firstOffer: "DORA and ICT risk baseline",
+    icon: Landmark,
+  },
+  {
+    title: "Data-intensive professional services",
+    description:
+      "Build confidence around sensitive client data, access, continuity, and the controls that protect trust-based relationships.",
+    trigger: "Procurement or privacy questions threaten a client relationship or renewal.",
+    firstOffer: "Baseline and Gap Assessment",
+    icon: Users,
+  },
+  {
+    title: "Organizations using AI",
+    description:
+      "Connect information security, privacy, and AI governance expectations as products and internal workflows evolve.",
+    trigger: "An AI use case creates a need for security, privacy, or AI-governance clarity.",
+    firstOffer: "AI and security governance gap assessment",
+    icon: ShieldCheck,
+  },
+];
+
+export const startHereOffers = [
+  {
+    title: "Compliance Clarity Conversation",
+    bestFor: "Leaders who need a grounded starting point",
+    trigger: "A customer, auditor, board, or regulator has raised the pressure.",
+    deliverable: "A focused discussion of scope, obligations, current posture, and the most useful next step.",
+    clientProvides: "The immediate pressure, the questions you are trying to answer, and any known deadline.",
+    nextStep: "Book a clarity conversation",
+    icon: Users,
+  },
+  {
+    title: "Baseline and Gap Assessment",
+    bestFor: "Teams that need to know what is missing",
+    trigger: "You need a defensible view before choosing a framework, audit, or remediation plan.",
+    deliverable: "A prioritized findings register, evidence view, and practical remediation roadmap.",
+    clientProvides: "Your current scope, key stakeholders, existing policies, and representative evidence.",
+    nextStep: "Discuss a baseline",
+    icon: Target,
+  },
+  {
+    title: "Readiness Build",
+    bestFor: "Organizations preparing for an external assessment",
+    trigger: "Controls, ownership, documentation, or evidence need to become audit-ready.",
+    deliverable: "A scoped readiness program connecting requirements, controls, evidence, and accountable owners.",
+    clientProvides: "The target framework, assessment horizon, operating context, and access to responsible owners.",
+    nextStep: "Plan a readiness build",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Continuous Compliance Governance",
+    bestFor: "Teams that want to stay ready between audits",
+    trigger: "Evidence and control activity drift after the initial assessment.",
+    deliverable: "A repeatable review, reporting, and improvement rhythm that keeps compliance current.",
+    clientProvides: "Existing review routines, evidence owners, management priorities, and recurring pain points.",
+    nextStep: "Discuss ongoing governance",
+    icon: RefreshCw,
+  },
+];
+
 export const outcomes = [
   {
     title: "Defensible Audit Conclusions",
@@ -145,54 +236,64 @@ export const supportingSubheads = [
   {
     title:
       "A framework-agnostic model that unifies control intent, completeness criteria, and evidence artifacts.",
+    icon: Layers3,
     description:
       "COMPLY separates what a control is meant to achieve, what criteria must be satisfied, and what evidence proves the control is operating. That structure allows one compliance model to work across multiple frameworks without rebuilding the program for each audit.",
   },
   {
     title: "UCC defines what auditors expect as objective evidence every time.",
+    icon: ClipboardCheck,
     description:
       "UCC (Universal Control Criteria) creates a consistent completeness standard for evaluating controls. Instead of relying on vague documentation, teams can assess whether the evidence supports the required criteria in a repeatable and auditable way.",
   },
   {
     title:
       "COMPLY Artifacts turn evidence into structured, purpose-built objects mapped to controls and criteria.",
+    icon: FileCheck2,
     description:
       "Artifacts are designed to show why evidence exists, which control it supports, which criteria it addresses, and whether it demonstrates design, existence, or operational effectiveness. This makes evidence easier to review, reuse, and defend.",
   },
   {
     title: "End-to-end traceability supports defensible audit conclusions.",
+    icon: GitBranch,
     description:
       "Traceability connects requirements to controls, criteria, evidence artifacts, and audit conclusions. This gives auditors and leadership a clear path from obligation to proof, reducing ambiguity during assessment and review.",
   },
   {
     title: "Reuse evidence across frameworks to reduce duplication and audit fatigue.",
+    icon: RefreshCw,
     description:
       "When evidence is tied to unified controls and criteria, a single artifact can support multiple frameworks. That reduces repeated evidence collection, shortens audit preparation, and helps teams avoid redundant compliance work.",
   },
   {
     title:
       "Governance and oversight keep evidence current through ownership, reviews, internal audit, and management review.",
+    icon: Landmark,
     description:
       "COMPLY treats compliance as an ongoing operating rhythm. Ownership, review cycles, internal audit, management review, and corrective actions help ensure evidence remains current between formal audits.",
   },
   {
     title:
       "Risk is the driver: Unified Controls respond, UCC enforces completeness, and artifacts prove reality.",
+    icon: Activity,
     description:
       "The model links risk context to control expectations and evidence requirements. Controls respond to risk, criteria define what complete implementation means, and artifacts show whether the control is working in practice.",
   },
   {
     title: "Prevent policy-only and tool-only compliance with operational evidence.",
+    icon: ShieldCheck,
     description:
       "Policies and tools are not enough by themselves. COMPLY focuses on operational evidence that demonstrates controls are implemented, reviewed, monitored, and producing reliable compliance outcomes.",
   },
   {
     title: "Automated gap detection highlights missing criteria and partial compliance.",
+    icon: Gauge,
     description:
       "Criteria-based review makes it easier to see which control expectations are fully supported, partially supported, or missing evidence. This turns gaps into clear remediation work instead of vague audit findings.",
   },
   {
     title: "A single integrated compliance evidence system built to be auditable and defensible.",
+    icon: Network,
     description:
       "The model brings controls, criteria, artifacts, traceability, risk, and governance into one evidence system. The result is a more durable compliance foundation that supports audit readiness and continuous oversight.",
   },
@@ -570,7 +671,7 @@ export const processSteps = [
 
 export const platformSections = [
   {
-    title: "Framework & Control Library",
+    title: "COMPLY UCF Workbench",
     description:
       "Maintain framework versions, framework controls, local control definitions, categories, applicability, and mapping rationale in one structured library.",
     model: "FRA_Frameworks, FrameworkControls, ControlMapping, CON_Controls",
@@ -585,42 +686,45 @@ export const platformSections = [
     icon: Layers3,
   },
   {
-    title: "Criteria & Evidence Model",
+    title: "COMPLY-DOCS",
     description:
-      "Connect audit criteria, internal compliance artifacts, client evidence, and documentation directly to controls and assessment needs.",
+      "Use the COMPLY-DOCS Workbench to organize documents and evidence artifacts, connect them to engagements and controls, and move them through governed review and publication.",
     model: "CRI_Criteria, COM_ComplyArtifacts, CLI_ClientArtifacts",
     includes: [
-      "Audit criteria associated with controls",
-      "Internal and client evidence registers",
-      "Evidence-to-control and evidence-to-criteria linkage",
+      "Organization and engagement repository setup",
+      "Document and evidence artifact classification",
+      "Framework and control mapping",
+      "Review, approval, and audit-ready publication",
     ],
     outcome:
-      "Evidence becomes reusable, validated, and traceable enough to support defensible audit conclusions.",
+      "Governed artifacts remain traceable from repository to control, review, and publication, producing audit-ready documentation with less duplication and rework.",
     icon: FileCheck2,
   },
   {
-    title: "Client, Engagement & Assessment Model",
+    title: "COMPLY Security Stack Assessment Workbench",
     description:
-      "Organize clients, engagements, assessments, applicable frameworks, assessment assets, and related risk assessment activity.",
+      "Run security stack assessments in one connected workbench for client profiles, engagements, assessment scope, frameworks, and assessment evidence.",
     model: "CLI_Clients, ENG_Engagements, ASS_Assessments, RiskAssessment",
     includes: [
-      "Client and engagement records",
-      "Assessment scope and framework alignment",
-      "Assets attached to assessments",
+      "Client and engagement management",
+      "Assessment scope and framework mapping",
+      "Security stack assets and control context",
+      "Assessment findings, ownership, and review tracking",
     ],
     outcome:
       "Every compliance effort has a defined scope, owner context, framework basis, and assessment record.",
     icon: NotebookTabs,
   },
   {
-    title: "Asset, Vulnerability, Threat & Risk",
+    title: "COMPLY Risk Workbench",
     description:
-      "Link assets to vulnerabilities, threats, risk evaluations, treatment decisions, owners, review states, and treatment controls.",
+      "Use the COMPLY Risk Workbench to inventory security assets, analyze vulnerabilities and threats, evaluate risk, and manage treatment decisions in one connected workspace.",
     model: "Assets, VUL_Vulnerabilities, Threats, Evaluations, RiskTreatments",
     includes: [
-      "Asset and vulnerability registers",
-      "Threat linkage and risk evaluation",
-      "Treatment plans mapped back to controls",
+      "Security asset inventory and context mapping",
+      "Vulnerability and threat analysis",
+      "Risk scoring and evaluation",
+      "Treatment planning with owner, control, and evidence linkage",
     ],
     outcome:
       "Risk treatment decisions connect directly to control operation, evidence needs, and governance review.",
@@ -653,6 +757,53 @@ export const platformSections = [
     outcome:
       "Technology coverage can be evaluated against compliance requirements, risks, and control expectations.",
     icon: Network,
+  },
+];
+
+export const workbenchSummaries = [
+  {
+    slug: "comply-risk",
+    title: "COMPLY-RISK",
+    description:
+      "Supports ISO-aligned risk assessments by connecting assets, vulnerabilities, threats, evaluations, risk treatment, ownership, and evidence context.",
+    practitionerUse:
+      "COMPLY practitioners use it to structure assessment work and turn risk decisions into a clear client roadmap.",
+    clientOutput:
+      "Depending on the engagement, clients may receive a risk register, treatment plan, findings summary, or selected controlled views.",
+    icon: Scale,
+  },
+  {
+    slug: "comply-ucf",
+    title: "COMPLY-UCF",
+    description:
+      "Creates a unified control framework for the client’s defined compliance scope by mapping obligations, framework controls, applicability, and local control intent.",
+    practitionerUse:
+      "COMPLY practitioners use it to rationalize overlapping requirements and create one defensible control backbone.",
+    clientOutput:
+      "Clients receive the agreed control framework, mapping rationale, applicability decisions, and engagement-specific exports or reports.",
+    icon: Layers3,
+  },
+  {
+    slug: "comply-ssa",
+    title: "COMPLY-SSA",
+    description:
+      "Supports security-stack assessments by connecting client context, engagement scope, frameworks, technologies, control coverage, and assessment findings.",
+    practitionerUse:
+      "COMPLY practitioners use it to evaluate whether the security stack supports the controls the business needs to operate.",
+    clientOutput:
+      "Clients may receive a security-stack assessment, coverage findings, ownership actions, and prioritized improvement recommendations.",
+    icon: Network,
+  },
+  {
+    slug: "comply-docs",
+    title: "COMPLY-DOCS",
+    description:
+      "Provides a governed Compliance Evidence Repository for organizing documents and evidence artifacts, mapping them to controls, and managing review status.",
+    practitionerUse:
+      "COMPLY practitioners use it to keep engagement evidence structured, traceable, reviewable, and reusable across frameworks.",
+    clientOutput:
+      "Clients may receive evidence registers, audit-ready packages, selected repository views, or controlled access when the engagement calls for it.",
+    icon: FileCheck2,
   },
 ];
 
@@ -718,6 +869,116 @@ export const resourceCategories = [
   "Audit Readiness Resources",
 ];
 
+export const resourceHighlights = [
+  {
+    title: "Readiness Scorecard",
+    audience: "For founders, executives, and security leaders",
+    businessProblem:
+      "You need to know whether your current effort is ready for customer, audit, or regulatory scrutiny before committing to a larger program.",
+    description:
+      "Use a practical set of questions to identify whether your current compliance effort is ready for customer, audit, or regulatory scrutiny.",
+    outcome: "See where to focus before investing in a larger readiness program.",
+    href: "/resources/readiness-scorecard",
+  },
+  {
+    title: "From Requirement to Evidence",
+    audience: "For compliance, security, and control owners",
+    businessProblem:
+      "Requirements, controls, evidence, and reviews are disconnected, so every audit request feels like starting over.",
+    description:
+      "Learn how to connect obligations, controls, evidence, reviews, and conclusions so the next audit request does not restart the work.",
+    outcome: "Create evidence that is easier to review, reuse, and defend.",
+    href: "/resources/requirement-to-evidence",
+  },
+];
+
+export const frameworkGuideCards = [
+  {
+    title: "ISO 27001 readiness",
+    description:
+      "Build an information security management system that connects scope, risk, controls, ownership, and evidence before certification review.",
+    href: "/frameworks/iso-27001",
+  },
+  {
+    title: "SOC 2 readiness",
+    description:
+      "Turn trust service criteria into operating controls, evidence expectations, and a practical path toward Type 1 or Type 2 readiness.",
+    href: "/frameworks/soc-2",
+  },
+  {
+    title: "Multi-framework readiness",
+    description:
+      "Use one evidence and control operating model when ISO, SOC 2, NIST, PCI DSS, GDPR, DORA, or AI-governance obligations overlap.",
+    href: "/frameworks/multi-framework",
+  },
+];
+
+export const additionalFrameworkGuideCards = [
+  {
+    title: "ISO 42001 and AI governance",
+    description:
+      "Build a practical AI management system around use cases, risk, accountability, controls, evidence, and continual improvement.",
+    href: "/frameworks/iso-42001",
+  },
+  {
+    title: "PCI DSS readiness",
+    description:
+      "Organize cardholder-data scope, control ownership, evidence, and remediation priorities before independent validation.",
+    href: "/frameworks/pci-dss",
+  },
+  {
+    title: "NIST SP 800-53 readiness",
+    description:
+      "Translate NIST SP 800-53 controls and baselines into a scoped, owned, evidenced, and reviewable program.",
+    href: "/frameworks/nist-sp-800-53",
+  },
+  {
+    title: "NIST CSF profiles",
+    description:
+      "Create current and target profiles, risk-based priorities, and an action plan for practical cyber risk management.",
+    href: "/frameworks/nist-csf",
+  },
+  {
+    title: "CIS Controls priorities",
+    description:
+      "Turn CIS Controls into a practical, risk-informed improvement roadmap for lean security and IT teams.",
+    href: "/frameworks/cis-controls",
+  },
+  {
+    title: "DORA and ICT risk",
+    description:
+      "Organize digital operational resilience, ICT risk, third-party, testing, and evidence expectations.",
+    href: "/frameworks/dora",
+  },
+  {
+    title: "GDPR security readiness",
+    description:
+      "Connect personal-data security obligations to risk, controls, evidence, ownership, and review routines.",
+    href: "/frameworks/gdpr",
+  },
+];
+
+export const teamProfiles = [
+  {
+    name: "Hans Lanslots, RI",
+    role: "Information & Technology Leader | Co-Creator of C.O.M.P.L.Y.",
+    summary:
+      "Hans brings more than three decades of experience guiding complex, cross-functional IT organizations and designing secure technology environments across Europe and the United States.",
+    clientBenefit:
+      "Clients gain an executive and operational perspective that connects control design, technology decisions, and compliance objectives to how the business actually runs.",
+    href: "https://www.linkedin.com/in/hans-lanslots-ri-a602b938",
+  },
+  {
+    name: "Steffani Burd, Ph.D.",
+    role: "Founder of ANSEC | Co-Creator of C.O.M.P.L.Y.",
+    summary:
+      "Steffani develops empirically based solutions that protect information assets, improve business outcomes, and apply security compliance in practical settings.",
+    clientBenefit:
+      "Clients gain a research-informed advisor who can connect security auditing, investigative thinking, communication, and business improvement.",
+    href: "https://www.linkedin.com/in/steffaniburd",
+  },
+];
+
 export const differentiators = [
   "Framework agnostic",
   "Evidence-driven",
@@ -770,27 +1031,27 @@ export const traceabilityNodes = [
   {
     title: "Requirement",
     description:
-      "The traceability chain begins with the obligation the organization must satisfy, whether it comes from a law, regulation, contract, customer requirement, internal policy, or security framework. COMPLY captures the requirement as the authoritative source of compliance intent so every downstream control, evidence artifact, and audit conclusion can be tied back to a clear obligation.",
+      "Capture the obligation, from law, contract, customer demand, policy, or framework, that drives every downstream decision.",
   },
   {
     title: "Framework Control",
     description:
-      "Framework controls translate requirements into recognized compliance expectations such as ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, or CIS Controls. COMPLY maps these controls through the control library so overlapping obligations can be rationalized, compared, and reused instead of being managed as disconnected audit workstreams.",
+      "Translate the obligation into recognized framework expectations and map overlaps so controls can be reused.",
   },
   {
     title: "Local Control & Criteria",
     description:
-      "Local controls define how the organization actually satisfies the mapped framework expectations in its own environment. Criteria, applicability, ownership, implementation guidance, and operating expectations establish what must be true for the control to be considered designed, implemented, operating, and ready for review.",
+      "Define how the organization meets the expectation, including applicability, ownership, guidance, and review criteria.",
   },
   {
     title: "Evidence Artifact",
     description:
-      "Evidence artifacts provide the proof that controls are operating in practice. COMPLY links documents, screenshots, tickets, reports, logs, approvals, reviews, and other evidence directly to the relevant criteria and controls, allowing evidence quality, completeness, reuse, and audit relevance to be evaluated before the audit begins.",
+      "Link supporting proof to controls and criteria so evidence quality, completeness, and reuse can be assessed.",
   },
   {
     title: "Audit / Report",
     description:
-      "Audit-ready outputs consolidate the traceability chain into defensible reporting. Risk registers, Statements of Applicability, audit criteria, control mappings, evidence packages, findings, and management reports show what was assessed, what evidence supports the conclusion, and where remediation or governance action is required.",
+      "Show what was assessed, what supports the conclusion, and where remediation or governance action remains.",
   },
 ];
 
@@ -798,7 +1059,7 @@ export const footerColumns = [
   { title: "Solutions", links: ["Governance", "Audit Readiness", "Risk Management", "Evidence"] },
   { title: "Services", links: ["Assessments", "Readiness", "Internal Audit", "Optimization"] },
   { title: "Resources", links: ["White Papers", "Guides", "Governance", "Audit Readiness"] },
-  { title: "Company", links: ["About", "Approach", "Contact", "Consultation"] },
+  { title: "Company", links: ["About", "Approach", "Contact", "Conversation"] },
 ];
 
 export const keywordDescription =

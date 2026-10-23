@@ -22,7 +22,7 @@ export default function HowItWorksPage() {
         description="COMPLY turns control design, operation, evidence, review, and improvement into a repeatable governance cadence."
         className="py-14 sm:py-18"
       />
-      <Section title="Compliance lifecycle wheel" className="pt-3 sm:pt-4">
+      <Section title="Compliance lifecycle wheel" className="pt-2 sm:pt-3 lg:pt-8">
         <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="lg:sticky lg:top-24">
             <ComplianceLifecycleWheel />

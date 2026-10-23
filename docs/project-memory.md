@@ -1,0 +1,55 @@
+# COMPLY Website project memory
+
+## Goal and scope
+Public marketing site for COMPLY security compliance services and practitioner Workbenches.
+
+## Architecture and backend
+Next.js 16 App Router, React 19, TypeScript, Tailwind. Contact and newsletter handlers use Resend. No Convex dependency is declared in package.json; this copy change does not introduce a backend.
+
+## Deployment and source
+Vercel project: comply-website, team hans-lanslots-projects.
+Production: https://mycomply.ai, version v0.1.2. Verified source c0e5954633a2ace38a531d62e9073b833f3c0a7f, deployment dpl_2RExwEwQh9T4JyzmMeWyRW1BVSVS. Previous Production dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX is retained and READY for rollback.
+User-selected Preview baseline: https://comply-website-7x8gtce5d-hans-lanslots-projects.vercel.app (dpl_huS4zGEevUVnBUfYvuuPWLj6kkYu).
+The Preview has no source metadata. Its original headline was verified through authenticated Vercel HTTP access; matching content is in codex/website-content-alignment at 6eef0f9. Branch descends from Production.
+
+## UI decisions and preferences
+Use the user-selected Preview content, preserving existing layout and styling. Scope this task to the home page headline. Deployments are immutable; an update requires a new Preview URL. Production requires a separate release request and candidate approval.
+
+## 2026-10-14 headline update
+Changed src/app/page.tsx to: “Expert-led security compliance for organizations across industries and stages of maturity, navigating customer, audit, or regulatory requirements.”
+Files touched: src/app/page.tsx, package.json, package-lock.json, AGENTS.md, and this memory file.
+Verification: original Preview headline and Production ancestry confirmed; npm ci, lint, typecheck, build, and release regression checks passed. npm test found no tests.
+Deployment: new Preview READY at https://comply-website-1m9img98h-hans-lanslots-projects.vercel.app, ID dpl_82TypBLSvWQuT9XyrzPTbxkpd2iT, candidate dc630ba427d06ed585ff9be0605344ee6b111bfa, version 0.1.1. Exact deployed replacement headline verified via authenticated Vercel HTTP; original headline absent. Production unchanged. Draft PR: https://github.com/hlanslots/Comply-Website/pull/2.
+Next step: review the updated Preview. Production release requires separate full gate validation and approval. Local and deployed Preview browser visual checks passed. GitHub CI and Vercel checks passed.
+Risk: baseline deployment has no source SHA metadata; broader Preview content has not been approved for Production by this request.
+
+## 2026-10-22 headline split
+User approved wording: “Expert-led security compliance for organizations across industries and stages of maturity—helping you navigate customer, audit, or regulatory requirements.”
+The helping clause now starts on a separate line using two block spans within the existing H1; natural wrapping remains available on narrow screens. Existing headline typography is preserved.
+Source baseline: 67ce693 on codex/homepage-headline, matching the previously reviewed Preview source. Changes scoped to src/app/page.tsx and this memory file; unrelated logo-animation work in the primary checkout is untouched.
+Verification: lint, typecheck, optimized build, release regression, protected Preview HTML, desktop (1440px) and mobile (390px) browser checks passed. Both H1 spans display as blocks and the helping clause starts below the first. H1 stays within the mobile viewport. Contact route loads and browser error collection was empty. Existing page-wide mobile scroll width (620px at 390px viewport) also occurs in the baseline; unrelated sections were left unchanged. No data changes or form submissions are needed; configured Preview backend remains unchanged.
+Preview READY: https://comply-website-8v2mw9dw2-hans-lanslots-projects.vercel.app, deployment dpl_2FLQnSn43vUQpoAvcyTrD21ccqgR, application source a9a5248c2e424ec76173c95bd4d743c2d469b0be. Preview configuration unchanged; only public page reads were exercised, with no form submissions or records created. Browser OIDC access returned TRUSTED_SOURCES_ENVIRONMENT_MISMATCH; temporary Vercel share links allowed browser verification without protection changes. Next step: user review. Production remains unchanged.
+
+## 2026-10-22 en dash typography
+Changed the home page headline separator from an em dash to an en dash, preserving the separate helping-clause line. Files: src/app/page.tsx and this memory. Verification: focused ESLint, Vercel optimized build/typecheck, and deployed browser text/line-break check passed; no browser errors reported. Preview READY: https://comply-website-5q6a5is08-hans-lanslots-projects.vercel.app (dpl_HqXNr6iEJTaSKaCLYeNuhjG1mKLK), source 5ff341b. Next step: user review. Production unchanged.
+
+## 2026-10-22 Production release preparation
+User requested a space before the en dash, an updated Preview, and Production promotion with rollback. The request authorizes completing the release after verification.
+Current Production baseline and rollback: e476c2973e42f25b6cb7f562cacc096335441c9a, dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX, https://comply-website-ofkzueaqp-hans-lanslots-projects.vercel.app. Verified live through Vercel; no aliases changed.
+The current Preview source descends from that baseline. The pending release includes existing Preview marketing content, framework/workbench/resource pages, qualification form, and the requested headline refinements, rather than only punctuation relative to Production.
+Preflight repair: main now requires strict verify CI and pull requests, including admins; force pushes/deletions disabled. No external reviewer count added. Release adapter now separates Production build/deploy with --skip-domain from explicit promotion, allowing canonical traffic to stay on the rollback deployment until checks pass. Required environment names are recorded in the release contract.
+The bundled parity helper expects a legacy root schema while this contract is schema 3.0; provide it a generated, name-only normalization of checks.environmentNames/artifactMarkers without altering its checks.
+Next step: implement spacing, freeze candidate, verify Preview, prepare and test the Production artifact, then promote and confirm rollback remains available.
+
+Candidate scope: home page now says “stages of maturity –” followed by the existing separate helping-clause block. Patch version selected: 0.1.2. Performance probes accept optional request headers from an environment variable so protected deployments can be checked without printing or committing credentials.
+
+Local validation: npm run verify (lint/typecheck/build), npm test (zero test cases), and test:release-regression passed. Local built-route probes: home 283ms, contact 271ms, both below 3000ms. Qualification form browser submission passed in the existing CONTACT_FORM_MOCK_SEND development mode; backend confirmed mocked=true and no email was sent. Rollback original headline checked through authenticated Vercel HTTP. Candidate ready to freeze.
+
+## 2026-10-22 completed Production v0.1.2
+Added the space before the headline en dash, preserving the separate helping-clause line. Candidate c0e5954633a2ace38a531d62e9073b833f3c0a7f is tagged v0.1.2.
+Verified Preview: https://comply-website-hrfy03j7i-hans-lanslots-projects.vercel.app (dpl_DBQ88vVPykzr53xaqFeR71JRdZtL). Built the same application SHA with provider-managed Production configuration, staged without routing canonical domains, then promoted dpl_2RExwEwQh9T4JyzmMeWyRW1BVSVS to mycomply.ai and www.mycomply.ai.
+Checks: source ancestry, strict PR CI, local lint/typecheck/build, public route preservation, configuration and bundle markers, Preview/staged/live route checks (29 per target), four non-delivering contact guards per target, browser desktop/mobile headline, and deployment logs passed. Local mock-send form flow passed; no real test email was sent. Live route timing: home 523ms and contact 400ms, each below 3000ms. No error/fatal entries in the 50-entry Production log scan.
+Rollback retained: dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX, source e476c2973e42f25b6cb7f562cacc096335441c9a. Verified READY after promotion and original page content before promotion. No schema/data migration occurred.
+Files touched by this step: src/app/page.tsx, package.json, package-lock.json, scripts/perf-check.mjs, release/release-production.sh, release/release-contract.json, release/release-manifest.json, docs/project-memory.md, and docs/Production Release 0.1.2.md. Release records are evidence-only after the frozen application commit.
+Known limits: whole-page mobile overflow was already present in the reviewed baseline; headline fits its viewport. Automated tests use desktop browser mobile emulation, not physical-device attestation. Production email delivery was not exercised; existing provider configuration is retained. Main still awaits PR #3 reconciliation; the live release is reproducible from v0.1.2. Do not merge older content branches over this release without preserving the tagged lineage and checking the deployment integration.
+Next step: review the live site. Any further source consolidation should keep v0.1.2 ancestry and the controlled Production promotion boundary.

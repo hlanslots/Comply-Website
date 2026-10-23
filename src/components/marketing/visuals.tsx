@@ -1,8 +1,9 @@
-import { ArrowRight, CheckCircle2, CircleDot, FileCheck2, GitBranch, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, CircleDot, GitBranch, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { frameworks, processSteps, traceabilityNodes } from "@/lib/site-data";
+import { processSteps, traceabilityNodes } from "@/lib/site-data";
 
 function polarToCartesian(center: number, radius: number, angleInDegrees: number) {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180;
@@ -174,7 +175,7 @@ export function TraceabilityFlow() {
         <div className="grid auto-rows-fr gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {traceabilityNodes.map((node, index) => (
             <div key={node.title} className="relative h-full">
-              <div className="flex h-full min-h-0 flex-col rounded-md border border-border bg-background p-4 lg:min-h-72">
+              <div className="flex h-full min-h-0 flex-col rounded-md border border-border bg-background p-4">
                 <div className="flex items-start gap-3">
                   <Badge variant="secondary" className="mt-0.5 rounded-md font-mono">
                     0{index + 1}
@@ -198,23 +199,17 @@ export function TraceabilityFlow() {
   );
 }
 
-export function FrameworkMatrix() {
+export function FrameworkGraph() {
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-      {frameworks.map((framework, index) => (
-        <div
-          key={framework}
-          className="group rounded-md border border-border bg-card p-4 transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-        >
-          <div className="mb-5 flex items-center justify-between">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
-              <FileCheck2 className="h-5 w-5" />
-            </span>
-            <span className="font-mono text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-          </div>
-          <p className="text-sm font-semibold">{framework}</p>
-        </div>
-      ))}
+    <div className="mx-auto w-full max-w-[336px]">
+      <Image
+        src="/ucf-framework-graph.png"
+        alt="Unified Control Framework graph connecting ISO 27001/2, SOC 2, NIST SP800, NIST CSF, CIS, PCI DSS, DORA, and GDPR"
+        width={1254}
+        height={1254}
+        unoptimized
+        className="h-auto w-full drop-shadow-2xl"
+      />
     </div>
   );
 }
@@ -222,7 +217,7 @@ export function FrameworkMatrix() {
 export function GovernanceModel() {
   const tiers = [
     {
-      title: "Framework and control library",
+      title: "COMPLY UCF Workbench",
       detail: "Frameworks, local controls, categories, mapping rationale, applicability, and guidance.",
     },
     {
@@ -230,7 +225,7 @@ export function GovernanceModel() {
       detail: "Criteria, compliance artifacts, client evidence, and document-to-control relationships.",
     },
     {
-      title: "Client engagement governance",
+      title: "COMPLY Security Stack Assessment Workbench",
       detail: "Clients, engagements, assessment scope, frameworks, assessment assets, and ownership.",
     },
     {

@@ -4,11 +4,12 @@ import { CalendarCheck, Mail, Phone } from "lucide-react";
 import { ContactForm } from "@/components/marketing/contact-form";
 import { PageHero, Section } from "@/components/marketing/section";
 import { Card, CardContent } from "@/components/ui/card";
+import { brandPromise } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Schedule a consultation with COMPLY for security compliance, risk management, audit readiness, governance, and evidence management support.",
+    "Schedule a conversation with COMPLY for security compliance, risk management, audit readiness, governance, and evidence management support.",
 };
 
 export default function ContactPage() {
@@ -16,30 +17,34 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Schedule a consultation with COMPLY."
-        description="Discuss your compliance obligations, audit readiness priorities, governance model, evidence strategy, and risk management needs."
+        title="Start with a Compliance Clarity Conversation."
+        description={`${brandPromise} Tell us what changed, what is due, and where your team needs confidence. We will help you frame the right next step for your scope and maturity.`}
         className="py-14 sm:py-18"
       />
-      <Section title="Consultation request" className="pt-3 sm:pt-4">
+      <Section
+        title="Conversation request"
+        description="The first step is a 30-minute Compliance Clarity Conversation. Afterward, COMPLY provides a short summary of the situation, the most useful next action, and whether a paid diagnostic is appropriate."
+        className="pt-2 sm:pt-3 lg:pt-8"
+      >
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr]">
           <div className="grid gap-4">
             {[
               {
-                title: "Executive consultation",
+                title: "Executive conversation",
                 description:
-                  "Discuss your compliance objectives, audit pressure, framework obligations, governance needs, and executive reporting priorities. COMPLY helps leadership clarify where compliance effort is being duplicated, where evidence is weak, and how to move toward defensible audit outcomes.",
+                  "Discuss your compliance objectives, audit pressure, framework obligations, governance needs, and executive reporting priorities. COMPLY helps leadership clarify where effort is duplicated, where evidence is weak, and what a defensible next step looks like.",
                 icon: CalendarCheck,
               },
               {
                 title: "Email response",
                 description:
-                  "Send a focused question about ISO 27001, SOC 2, NIST, PCI DSS, GDPR, DORA, NIS2, evidence reuse, control mapping, audit readiness, or governance oversight. COMPLY will respond with practical next steps and the right consultation path for your situation.",
+                  "Send a focused question about ISO 27001, ISO 42001, SOC 2, NIST, PCI DSS, GDPR, DORA, evidence reuse, control mapping, audit readiness, or governance oversight.",
                 icon: Mail,
               },
               {
                 title: "Compliance advisory",
                 description:
-                  "Request guidance on building, improving, or validating a compliance operating model. Typical advisory topics include unified controls, UCC (Universal Control Criteria), evidence management, risk-to-control traceability, internal audit readiness, and continuous compliance governance.",
+                  "Request guidance on building, improving, or validating a compliance operating model. Typical topics include unified controls, evidence management, risk-to-control traceability, internal audit readiness, and continuous compliance governance.",
                 icon: Phone,
               },
             ].map((item) => {
@@ -62,9 +67,32 @@ export default function ContactPage() {
           <Card className="bg-card/80">
             <CardContent className="p-6">
               <ContactForm />
+              <p className="mt-5 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                After you submit, we review the request for fit and use the details you share to
+                prepare a focused first conversation. If more context is needed, we will clarify
+                that before recommending a paid diagnostic.
+              </p>
             </CardContent>
           </Card>
         </div>
+      </Section>
+      <Section
+        eyebrow="Scope and independence"
+        title="Clear support, clear boundaries."
+        className="bg-muted/45 pt-8 sm:pt-10"
+      >
+        <p className="max-w-4xl leading-7 text-muted-foreground">
+          COMPLY supports readiness, governance, evidence, risk management, and internal
+          assessment. COMPLY does not issue ISO certifications, replace an independent auditor or
+          certification body, act as a QSA where one is required, or provide legal advice.
+          Applicability depends on the client&apos;s scope, obligations, contracts, and operating
+          environment.
+        </p>
+        <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
+          We review each request for fit and use the information you provide to prepare a focused
+          first conversation. A paid diagnostic is recommended only when it is the appropriate next
+          step.
+        </p>
       </Section>
     </>
   );

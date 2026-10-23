@@ -37,6 +37,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <a
+            href="https://portal.mycomply.ai"
+            className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+          >
+            Workbench Portal
+          </a>
           <ThemeToggle />
         </div>
 
@@ -64,6 +70,12 @@ export function SiteHeader() {
                 <span className="text-lg font-semibold tracking-[0.18em]">COMPLY</span>
               </div>
               <nav className="grid gap-2" aria-label="Mobile navigation">
+                <a
+                  href="https://portal.mycomply.ai"
+                  className="rounded-md bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+                >
+                  Workbench Portal
+                </a>
                 {navItems.map((item) => (
                   <Link
                     key={item.href}

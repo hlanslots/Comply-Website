@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CheckCircle2, Database, FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Database, FileText } from "lucide-react";
 
 import { PageHero, Section } from "@/components/marketing/section";
 import {
@@ -8,14 +9,16 @@ import {
   TraceabilityFlow,
 } from "@/components/marketing/visuals";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   platformInteractionPatterns,
   platformMetrics,
   platformOperatingModel,
   platformReports,
-  platformSections,
+  workbenchSummaries,
 } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Platform",
@@ -28,13 +31,19 @@ export default function PlatformPage() {
     <>
       <PageHero
         eyebrow="Platform"
-        title="A compliance operating model for defensible control outcomes."
-        description="COMPLY connects requirements, controls, evidence, governance, and audit conclusions in one reusable model."
+        title="Purpose-built Workbenches that help COMPLY practitioners deliver defensible outcomes."
+        description="COMPLY connects requirements, controls, evidence, governance, and audit conclusions in one reusable model. The Workbenches primarily support COMPLY practitioners during client engagements; client-facing access is defined by the engagement need."
         className="py-14 sm:py-18"
       />
-      <Section title="Platform capabilities" className="pt-3 sm:pt-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {platformSections.map((section) => {
+      <Section
+        id="workbenches"
+        eyebrow="Representative practitioner views"
+        title="How the Workbenches support the engagement."
+        description="COMPLY practitioners use the Workbenches to structure assessment and readiness work. Depending on the engagement, clients may receive reports, exports, representative screenshots, selected views, or controlled access."
+        className="pt-2 sm:pt-3 lg:pt-8"
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          {workbenchSummaries.map((section) => {
             const Icon = section.icon;
             return (
               <Card key={section.title} className="h-full bg-card/80">
@@ -42,37 +51,73 @@ export default function PlatformPage() {
                   <div className="mb-6 flex items-start justify-between gap-4">
                     <Icon className="h-8 w-8 text-primary" />
                     <Badge variant="secondary" className="rounded-md">
-                      Platform model
+                      Practitioner Workbench
                     </Badge>
                   </div>
-                  <h2 className="text-xl font-semibold lg:min-h-14">{section.title}</h2>
-                  <p className="mt-3 leading-7 text-muted-foreground lg:min-h-32">
+                  <div
+                    className="mb-6 rounded-lg border border-border bg-background/80 p-3 shadow-inner"
+                    aria-label={`${section.title} representative screenshot`}
+                  >
+                    <div className="flex items-center justify-between gap-3 border-b border-border pb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-primary" />
+                        <span className="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">
+                          COMPLY WORKBENCH
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                        Representative view
+                      </span>
+                    </div>
+                    <div className="mt-3 grid gap-2">
+                      {["Engagement scope", "Control and evidence links", "Review status", "Client-ready output"].map(
+                        (label, index) => (
+                          <div key={label} className="flex items-center gap-2">
+                            <span className="h-2 flex-1 rounded-full bg-primary/15" />
+                            <span className="w-28 text-right text-[10px] text-muted-foreground">
+                              {label}
+                            </span>
+                            <span className="h-2 w-8 rounded-full bg-primary/35" aria-hidden="true" />
+                            <span className="sr-only">Step {index + 1}</span>
+                          </div>
+                        ),
+                      )}
+                    </div>
+                    <p className="mt-3 text-[10px] leading-4 text-muted-foreground">
+                      Illustrative screen treatment – not live portal access.
+                    </p>
+                  </div>
+                  <h2 className="text-xl font-semibold">{section.title}</h2>
+                  <p className="mt-3 leading-7 text-muted-foreground">
                     {section.description}
                   </p>
-                  <div className="mt-6 lg:min-h-52">
-                    <h3 className="text-sm font-semibold">Includes</h3>
-                    <ul className="mt-3 grid gap-2">
-                      {section.includes.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-2 text-sm leading-6 text-muted-foreground"
-                        >
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-6">
-                    <div className="min-h-36 rounded-md border border-border bg-background p-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                        Outcome
-                      </p>
+                  <div className="mt-6 grid gap-4 border-t border-border pt-5 sm:grid-cols-2">
+                    <div>
+                      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                        Practitioner use
+                      </h3>
                       <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                        {section.outcome}
+                        {section.practitionerUse}
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                        Client-facing output
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                        {section.clientOutput}
                       </p>
                     </div>
                   </div>
+                  <Link
+                    href={`/workbenches/${section.slug}`}
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "mt-6 w-full justify-center rounded-md",
+                    )}
+                  >
+                    View practitioner workflow <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </CardContent>
               </Card>
             );
@@ -80,9 +125,9 @@ export default function PlatformPage() {
         </div>
       </Section>
       <Section
-        eyebrow="Architecture"
-        title="An operational database for compliance, audit, risk, and control management."
-        description="The COMPLY platform model brings frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling into one connected system of record."
+        eyebrow="Connected delivery model"
+        title="A connected model for practitioner delivery."
+        description="Within the engagement, COMPLY connects frameworks, controls, audit criteria, evidence, client assessments, assets, vulnerabilities, threats, risk treatment, obligations, and security tooling so practitioners can produce clearer, more defensible client outputs."
         className="bg-muted/45"
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
