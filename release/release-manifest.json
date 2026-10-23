@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0",
+  "releaseId": "22e438a7-812c-4a6f-baa6-87e3a0a67681",
+  "stage": "complete",
+  "repository": "hlanslots/Comply-Website",
+  "branch": "codex/website-production-spacing",
+  "riskLane": "standard",
+  "promotionMode": "rebuild-production",
+  "application": {
+    "sha": "c0e5954633a2ace38a531d62e9073b833f3c0a7f",
+    "version": "0.1.2",
+    "changeType": "application",
+    "tagPrefix": "v"
+  },
+  "lineage": {
+    "productionSha": "e476c2973e42f25b6cb7f562cacc096335441c9a",
+    "ancestryCheck": "passed"
+  },
+  "handoff": null,
+  "preview": {
+    "url": "https://comply-website-hrfy03j7i-hans-lanslots-projects.vercel.app",
+    "deploymentId": "dpl_DBQ88vVPykzr53xaqFeR71JRdZtL",
+    "status": "READY",
+    "sourceSha": "c0e5954633a2ace38a531d62e9073b833f3c0a7f",
+    "version": "0.1.2",
+    "checks": {
+      "authenticatedFlow": "passed",
+      "browser": "passed",
+      "configuration": "passed",
+      "contract": "passed",
+      "github": "passed",
+      "logs": "passed",
+      "performance": "passed",
+      "routes": "passed"
+    }
+  },
+  "approval": {
+    "required": true,
+    "exactText": "Approve production release for Preview https://comply-website-hrfy03j7i-hans-lanslots-projects.vercel.app, deployment dpl_DBQ88vVPykzr53xaqFeR71JRdZtL, commit c0e5954633a2ace38a531d62e9073b833f3c0a7f, version 0.1.2.",
+    "approvedAt": "2026-10-22T23:56:59Z",
+    "authorizationBasis": {
+      "userInstruction": "Add a space before the en dash in the home page headline and update the Preview. when done, promote to production while keeping a rollback option.",
+      "interpretation": "User explicitly authorized automatic Production promotion after completing and verifying this requested change. Authorization was given before the candidate identity existed; the generated exact tuple above binds that standing instruction to this verified candidate and is not represented as a verbatim later user message."
+    }
+  },
+  "production": {
+    "domain": "mycomply.ai",
+    "deploymentId": "dpl_2RExwEwQh9T4JyzmMeWyRW1BVSVS",
+    "status": "READY",
+    "sourceSha": "c0e5954633a2ace38a531d62e9073b833f3c0a7f",
+    "version": "0.1.2",
+    "rollbackDeploymentId": "dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX",
+    "tag": "v0.1.2",
+    "checks": {
+      "authenticatedFlow": "passed",
+      "browser": "passed",
+      "configuration": "passed",
+      "logs": "passed",
+      "performance": "passed",
+      "routes": "passed"
+    }
+  },
+  "performance": {
+    "required": true
+  },
+  "blocker": null,
+  "evidence": {
+    "previewIdentity": "artifacts/release-spacing/preview-identity.json",
+    "previewRoutes": "artifacts/release-spacing/preview/routes.json",
+    "previewConfiguration": "artifacts/release-spacing/preview/configuration.json",
+    "previewPerformance": [
+      "artifacts/release-spacing/preview/cold-app-load.json",
+      "artifacts/release-spacing/preview/changed-flow.json"
+    ],
+    "previewLogs": "artifacts/release-spacing/preview-logs.jsonl",
+    "github": "https://github.com/hlanslots/Comply-Website/pull/3",
+    "rollbackIdentity": "artifacts/release-spacing/production-before.json",
+    "publicAuthentication": "Public marketing site has no application sign-in; deployment-authenticated browser checks, form inspection, server guards and local mock-send flow passed.",
+    "productionIdentity": "artifacts/release-spacing/live-identity.json",
+    "productionRoutes": "artifacts/release-spacing/production/routes.json",
+    "productionPerformance": [
+      "artifacts/release-spacing/production/cold-app-load.json",
+      "artifacts/release-spacing/production/changed-flow.json"
+    ],
+    "productionConfiguration": "artifacts/release-spacing/production/configuration.json",
+    "productionLogs": "artifacts/release-spacing/production-logs.jsonl",
+    "rollbackAfterRelease": "artifacts/release-spacing/rollback-after.json"
+  },
+  "completedAt": "2026-10-22T20:07:07-04:00"
+}

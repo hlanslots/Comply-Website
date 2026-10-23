@@ -8,7 +8,7 @@ Next.js 16 App Router, React 19, TypeScript, Tailwind. Contact and newsletter ha
 
 ## Deployment and source
 Vercel project: comply-website, team hans-lanslots-projects.
-Production: https://mycomply.ai. Verified source e476c2973e42f25b6cb7f562cacc096335441c9a, deployment dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX.
+Production: https://mycomply.ai, version v0.1.2. Verified source c0e5954633a2ace38a531d62e9073b833f3c0a7f, deployment dpl_2RExwEwQh9T4JyzmMeWyRW1BVSVS. Previous Production dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX is retained and READY for rollback.
 User-selected Preview baseline: https://comply-website-7x8gtce5d-hans-lanslots-projects.vercel.app (dpl_huS4zGEevUVnBUfYvuuPWLj6kkYu).
 The Preview has no source metadata. Its original headline was verified through authenticated Vercel HTTP access; matching content is in codex/website-content-alignment at 6eef0f9. Branch descends from Production.
 
@@ -44,3 +44,12 @@ Next step: implement spacing, freeze candidate, verify Preview, prepare and test
 Candidate scope: home page now says “stages of maturity –” followed by the existing separate helping-clause block. Patch version selected: 0.1.2. Performance probes accept optional request headers from an environment variable so protected deployments can be checked without printing or committing credentials.
 
 Local validation: npm run verify (lint/typecheck/build), npm test (zero test cases), and test:release-regression passed. Local built-route probes: home 283ms, contact 271ms, both below 3000ms. Qualification form browser submission passed in the existing CONTACT_FORM_MOCK_SEND development mode; backend confirmed mocked=true and no email was sent. Rollback original headline checked through authenticated Vercel HTTP. Candidate ready to freeze.
+
+## 2026-10-22 completed Production v0.1.2
+Added the space before the headline en dash, preserving the separate helping-clause line. Candidate c0e5954633a2ace38a531d62e9073b833f3c0a7f is tagged v0.1.2.
+Verified Preview: https://comply-website-hrfy03j7i-hans-lanslots-projects.vercel.app (dpl_DBQ88vVPykzr53xaqFeR71JRdZtL). Built the same application SHA with provider-managed Production configuration, staged without routing canonical domains, then promoted dpl_2RExwEwQh9T4JyzmMeWyRW1BVSVS to mycomply.ai and www.mycomply.ai.
+Checks: source ancestry, strict PR CI, local lint/typecheck/build, public route preservation, configuration and bundle markers, Preview/staged/live route checks (29 per target), four non-delivering contact guards per target, browser desktop/mobile headline, and deployment logs passed. Local mock-send form flow passed; no real test email was sent. Live route timing: home 523ms and contact 400ms, each below 3000ms. No error/fatal entries in the 50-entry Production log scan.
+Rollback retained: dpl_EcwZvsjg2BSAshZZSQMdNjYrUXmX, source e476c2973e42f25b6cb7f562cacc096335441c9a. Verified READY after promotion and original page content before promotion. No schema/data migration occurred.
+Files touched by this step: src/app/page.tsx, package.json, package-lock.json, scripts/perf-check.mjs, release/release-production.sh, release/release-contract.json, release/release-manifest.json, docs/project-memory.md, and docs/Production Release 0.1.2.md. Release records are evidence-only after the frozen application commit.
+Known limits: whole-page mobile overflow was already present in the reviewed baseline; headline fits its viewport. Automated tests use desktop browser mobile emulation, not physical-device attestation. Production email delivery was not exercised; existing provider configuration is retained. Main still awaits PR #3 reconciliation; the live release is reproducible from v0.1.2. Do not merge older content branches over this release without preserving the tagged lineage and checking the deployment integration.
+Next step: review the live site. Any further source consolidation should keep v0.1.2 ancestry and the controlled Production promotion boundary.
